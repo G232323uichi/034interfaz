@@ -26,6 +26,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <script src="Bootstrap0/js/popper.min.js"></script>
 
 -->
+<!--
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" >
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Language" content="Español" />
+
+<link rel="stylesheet" type="text/css" href="http://localhost/MVC4/033interfaz/adminlte/css/estilos.css" />
+
+-->
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--title>AdminLTE 3 | DataTables</title-->
