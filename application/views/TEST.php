@@ -1591,6 +1591,7 @@
                         </select>
                       </div>
                     </div>
+                    
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Select Multiple Disabled</label>
@@ -1603,6 +1604,21 @@
                         </select>
                       </div>
                     </div>
+
+
+ <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Select Multiple Disabled</label>
+                        <select multiple class="form-control" disabled>
+                          <option>option 1</option>
+                          <option>option 2</option>
+                          <option>option 3</option>
+                          <option>option 4</option>
+                          <option>option 5</option>
+                        </select>
+                      </div>
+                    </div>
+
                   </div>
                 </form>
               </div>
