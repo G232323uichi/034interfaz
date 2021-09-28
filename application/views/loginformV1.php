@@ -208,20 +208,6 @@ switch ($msg)
 </div>
  
  -->
- 
+
      <!-- /.login-logo-->
-   <li id=li1> <a>
-    <i id=i1  class="fas fa-swimmer"></i>
-    <i id=i1 class="fas fa-swimmer "></i>
-    <i id=i1 class="fas fa-swimmer "></i>
-    <i id=i1 class="fas fa-swimmer"></i>
-    <i id=i1 class="fas fa-swimmer"></i>
-    <i id=i1 class="fas fa-swimmer"></i>
-    <i id=i1 class="fas fa-swimmer"></i>
-    <i id=i1 class="fas fa-swimmer"></i>
-    <i id=i1 class="fas fa-swimmer"></i>
-    <i id=i1 class="fas fa-swimmer"></i>
-    <i id=i1 class="fas fa-swimmer"></i>
-    <i id=i1 class="fas fa-swimmer"></i>
-    <i id=i1 class="fas fa-swimmer"></i> 
-    </a>    
+   
