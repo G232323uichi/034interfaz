@@ -95,7 +95,7 @@ width: 150%;
             echo form_close();
  ?>
 <!--/***************** ESTUDIANTES   **********************************************/-->
-<div class="p-3 mb-2 bg-primary text-white" align="center">ESCUELA </div>
+<div class="p-3 mb-2 bg-primary text-white" align="center">ESCUELAaaaaaaaaaaa </div>
 
 <!--/***************** ***********************************************************/-->
 <div class="dropdown">
@@ -104,8 +104,8 @@ width: 150%;
   <div class="dropdown-child">
     <nav class="top_menu">
       <ul>
-        <li><a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index3">MENSUALIDADES</a></li> 
-        <li><!--a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index6">INSUMOS</a--></li> 
+      <li><a href="http://localhost/MVC4/034interfaz/index.php/estudiante/index3">MENSUALIDADES</a></li> 
+     <li><!--a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index6">INSUMOS</a--></li> 
       </ul> 
      </nav>
   </div>
@@ -160,8 +160,8 @@ echo date('Y/m/d H:i:s');
             echo form_open_multipart('estudiante/agregarP');
     ?>
      <div style="text-align: right;">
-         <div style=" font-weight: bold;">INSERTAR </div>
- 
+         <div style=" font-weight: bold;">INSCRIBIR</div>
+         <div style=" font-weight: bold;">NUEVO</div>
          <button type="submit" class="btn btn-success btn-xs"><i id=i13 class="fas fa-swimmer  fa-2x"></i></button>
      </div>  
  

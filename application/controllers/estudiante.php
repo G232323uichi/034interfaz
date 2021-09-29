@@ -39,7 +39,7 @@ public function index()     //LOGIN   ADMINISTRADOR
  /*****************************************************************************/
 /****************************   TABLA     REG  MENSUALIDAD *********************/ 
 
-public function index3() // REGISTRO  DE  ESTUDIANTES ANTIGUO NO VA 
+public function index3() // REGISTRO  DE  ESTUDIANTES ANTIGUO  VA 
 	{
 		$lista=$this->estudiante_model->lista3();
 		$data['EST']=$lista;
