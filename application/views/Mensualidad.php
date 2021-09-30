@@ -22,6 +22,7 @@
 padding: 0;
 margin: 0;
 font-family: century gothic;
+text-align: center;
 
 }
 form{
@@ -30,6 +31,7 @@ background-color: #ededed;
 margin: calc(25% + 100px);
 margin-top: 70px;
 padding-top: 28pX;
+margin-bottom: 30px;
 
 }
 h1{
