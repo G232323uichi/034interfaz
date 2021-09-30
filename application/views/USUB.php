@@ -95,7 +95,7 @@ width: 150%;
             echo form_close();
  ?>
 <!--/***************** ESTUDIANTES   **********************************************/-->
-<div class="p-3 mb-2 bg-primary text-white" align="center">ESCUELAaaaaaaaaaaa </div>
+<div class="p-3 mb-2 bg-primary text-white" align="center">ESCUELA </div>
 
 <!--/***************** ***********************************************************/-->
 <div class="dropdown">

@@ -46,7 +46,8 @@ public function index3() // REGISTRO  DE  ESTUDIANTES ANTIGUO  VA
 	
 
 		$this->load->view('inc_head.php');    //archivos de cabecera
-		$this->load->view('EST',$data); //contenido
+		$this->load->view('Mensualidad',$data); //contenido
+		//$this->load->view('EST',$data); //contenido mensualidad
 		$this->load->view('inc_footer.php');  //archivos del footer
 		
 	}

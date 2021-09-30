@@ -172,7 +172,7 @@ switch ($msg)
           <!-- /.col -->
           <div class="col-4">
             <!--button type="submit" class="btn btn-primary btn-xs">INGRESAR</button-->
-              <button id=box1 type="submit" class="btn btn-success btn-xs">INGRESAR</button>
+              <button id=box1 type="submit" class="btn btn-success btn-xs">INGRESARdddd</button>
           </div>
           <!-- /.col -->
 </div>
