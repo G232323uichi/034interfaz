@@ -68,8 +68,65 @@ class Usuarios extends CI_Controller
   	         } 
         }
   }
+/****************************************************************************************/
+/*
+	public function validarmensualidad()
+	{
+	  $ci=$_POST['ci'];              // llegan  login del formulario por POST de la BD
+     // $password=md5($_POST['password']);   //llega pass del formulario y md5 lo encripta
+	 // $password=$_POST['password'];
+	  //$consulta=$this->usuarios_model->validar($login,$password);
+	   $consulta=$this->usuarios_model->validarMensualidad($ci);
 
+	  if($consulta->num_rows()>0)                        //si la  cantidad de  filas es > 0
+	  {
+	    	foreach($consulta->result() as $row)
+	    	{
+	  		//Se  existe  las varibl .... se crear las variables de  sesion
+ //se crea la  variable de session ´ idusuario´  y que valor va tener idusuario sacado de BD escrito
+	  		  $this->session->set_userdata('idmensualidad',$row->idmensualidad);
+	  		  $this->session->set_userdata('ci',$row->ci);
+	  		 // $this->session->set_userdata('tipo',$row->tipo);
+	  		  redirect('usuarios/panel','refresh');
+	  	    }
+	   }
+	  else
+	   {//sino  existe --> redirigimos a index enviando 1 en el  urisegment 3
+	   	//  $mensaje="ERROR DE  INGRESO ";
+	  	redirect('usuarios/index/1','refresh');
+	   }
+    }
+*/
+public function validarmensualidad()
+    // public function panel()   // VALIDACION  DE  LOS  LOGIN  admi--
+ {
+                    
+ 	//if(isset($_POST['register'])){
+ 		if(strlen($_POST['ci']) >= 1){
+ 			$ci=trim($_POST['ci']);
+ 		}
+ 	  $consulta=$this->usuarios_model->validarMensualidad($ci);
+     if($consulta->num_rows()>0)                        //si la  cantidad de  filas es > 0
+	  {
+	    	foreach($consulta->result() as $row)
+	    	{
+ //Se  existe  las varibl .... se crear las variables de  sesion
+ //se crea la  variable de session ´ idusuario´  y que valor va tener idusuario sacado de BD escrito
+	  		  $this->session->set_userdata('idmensualidad',$row->idmensualidad);
+	  		  $this->session->set_userdata('ci',$row->ci);
+	  		 // $this->session->set_userdata('tipo',$row->tipo);
+	  		  redirect('usuarios/panel','refresh');
+	  	    }
+	   }
+	  else
+	   {//sino  existe --> redirigimos a index enviando 1 en el  urisegment 3
+	   	//  $mensaje="ERROR DE  INGRESO ";
+	  	redirect('usuarios/index/1','refresh');
+	   }
 
+ 	
+  }
+  
  /**************************    M O D I F I C A R    USUARIOS  ADMINISTRADOR **********************/
  /******                         MODIFICAR  USU  Admi  para      *******/
 public function USUmodificar() 

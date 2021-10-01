@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Usuarios_model extends CI_Model {
 
 /*************************** VALIDAR  LOGIN  &  PASSWORD   a USUARIOS **********************/
+
 	public function validar($login,$password)
 	{
 		$this->db->select('*');
@@ -12,6 +13,20 @@ class Usuarios_model extends CI_Model {
 		$this->db->where('password',$password);//pass de bd sea el mismo que el $pass del formu  											introducido
 		return $this->db->get();
 	}
+/****************************   VALIDAR  MENSUALIDAD     *****************************/
+//usuarios_model->validarmensualidad($ci);
+
+public function validarMensualidad($ci)
+	{
+		$this->db->select('*');
+		$this->db->from('mensualidad');
+		$this->db->where('ci',$ci);//ci de base datos  sea lo mismo  de el $login deL 											formulario intro
+		//$this->db->where('password',$password);//pass de bd sea el mismo que el $pass del formu  											introducido
+		return $this->db->get();
+	}
+
+
+
 /*******************************************************************************/
 
 	  public function lista()      //lista  TODOS  la  tabla USUARIOS todo CON  ESTADO 1 si es 0 no  select o lista 

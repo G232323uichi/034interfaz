@@ -86,17 +86,23 @@ echo date('Y/m/d H:i:s');
  ?>
   
  <tbody>
-    <form method="post">
-      <h6>VERIFICACIÓN DE LA MENSUALIDAD</h6>
+    <!--form method="post"-->
+<?php
+                  echo form_open_multipart('usuarios/validarmensualidad');
+?>
+      <h6>VERIFICACIÓN DE LA MENSUALIDAD DDDDd</h6>
   
       <input type="text" name="name" placeholder="Nombre">
       <input type="text" name="ci" placeholder="ci">
       <input type="submit" name="register">
+    <!--/form-->
+
+
 
   </tbody>
 
-
-  <br>
+  <?php  echo form_close(); ?>
+  
 
 <!--
  <li><a href="#">
@@ -127,11 +133,12 @@ echo date('Y/m/d H:i:s');
   
 <!--h3 style="font-weight:bolder;">TABLA  5</h3-->
 
-<!--h3 style="font-weight:bolder;">FORMULARIO DEL  ESTUDIANTE</h3-->
+<!--h3 style="font-weight:bolder;">FORMULARIO DEL  ESTUDIANTE</h3
 
 <br>
 
 <br>
+-->
   <!--img width="100" img src="<?php echo base_url(); ?> aaa1.jpg"
 
     <?php
