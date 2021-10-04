@@ -30,7 +30,7 @@
 }
 
 .dropdown {
-    position: relative;     le  da mas  dinamismo
+    position: relative;    /* le  da mas  dinamismo*/
     display: inline-block;
 }
 
@@ -104,7 +104,8 @@ width: 150%;
   <div class="dropdown-child">
     <nav class="top_menu">
       <ul>
-      <li><a href="http://localhost/MVC4/034interfaz/index.php/estudiante/index3">MENSUALIDADES</a></li> 
+      <!--li><a href="http://localhost/MVC4/034interfaz/index.php/estudiante/index3">MENSUALIDADES</a></li--> 
+       <li><a href="http://localhost/MVC4/034interfaz/index.php/usuarios/validarmen">MENSUALIDADES</a></li> 
      <li><!--a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index6">INSUMOS</a--></li> 
       </ul> 
      </nav>

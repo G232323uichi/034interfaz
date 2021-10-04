@@ -91,14 +91,12 @@ echo date('Y/m/d H:i:s');
                  echo form_open_multipart('usuarios/validarmensualidad');
                  // echo form_open_multipart('validarmensualidad');
 ?>
-      <h6>VERIFICACIÓN DE LA MENSUALIDAD</h6>
+      <h6>NO TIENEN DE LA MENSUALIDAD</h6>
 <?php
   //if (isset($_POST['register']))
  // { 
  ?>     
        <input type="text" name="ci" placeholder="ci">
-       <!--input style="background: #EDF5FE" type="text" class="form-control" name="ci" value="<?php echo $row->ci; ?>"-->
-
        <input type="submit" name="register">
       <!--/form-->
 <?php

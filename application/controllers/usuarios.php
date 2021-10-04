@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Usuarios extends CI_Controller
  {  
+ 	function _construct(){
+ 		parent::_construct();
+ 		$this->load->helper('form');
+ 		$this->load->model('usuarios_model');
+ 	}
+
 	public function index()
 	{
 		$data['msg']=$this->uri->segment(3);  // se  recupera  un  numero  para mandar un  mensaje
@@ -68,6 +74,22 @@ class Usuarios extends CI_Controller
   	         } 
         }
   }
+/**************************  NUEVO FORMUlario  mensualidad ********************************************/
+	public function nuevo(){
+		//$data=['ddddddddddddddddddddddddddd'];
+		$this->load->view('inc_head.php');    //archivos de cabece
+   	     $this->load->view('formularioM.php'); //contenido   formulario
+		 $this->load->view('inc_footer.php');  //archivos del footer
+
+	}
+     //  'nombre'=> $this->input->post('nombre'), 
+
+	 function recibirDatos(){
+	//	$data=$array(
+	//		"ci" => $this->input->post('ci') 
+	//	);
+	}
+
 /****************************************************************************************/
 /*
 	public function validarmensualidad()
@@ -97,25 +119,44 @@ class Usuarios extends CI_Controller
 	   }
     }
 */
-public function validarmensualidad()
-    // public function panel()   // VALIDACION  DE  LOS  LOGIN  admi--
- {
-                    
- 	//if(isset($_POST['register'])){
- 		if(strlen($_POST['ci']) >= 1){
- 			$ci=trim($_POST['ci']);
- 		}
+//public function validarmensualidad()
+public function validarmen()
+   
+ {  
+ 	//if(strlen($_POST['ci'])){
+ 		
+
+ 			
+ 			//$ci=trim($_POST['ci']);
+ 				$dato['string']='rrrrrrrrrrrrrrrrrrrrr';
+ 				$this->load->view('inc_head.php');    //archivos de cabece
+ 			   // $this->load->view('USUA.php'); //contenido   formulario
+   	            $this->load->view('Mensualidad'); //contenido   formulario
+		        $this->load->view('inc_footer.php');  //archivos del footer
+
+ 		//   }
+ 		//else{
+ 				$this->load->view('inc_head.php');    //archivos de cabece
+   	            $this->load->view('pru3.php',$dato); //contenido   formulario
+		        $this->load->view('inc_footer.php');  //archivos del footer
+ 		//}
+
+ }
+
+ /*		
  	  $consulta=$this->usuarios_model->validarMensualidad($ci);
-     if($consulta->num_rows()>0)                        //si la  cantidad de  filas es > 0
+       if($consulta->num_rows()>0)                        //si la  cantidad de  filas es > 0
 	  {
 	    	foreach($consulta->result() as $row)
 	    	{
- //Se  existe  las varibl .... se crear las variables de  sesion
- //se crea la  variable de session ´ idusuario´  y que valor va tener idusuario sacado de BD escrito
+
 	  		  $this->session->set_userdata('idmensualidad',$row->idmensualidad);
 	  		  $this->session->set_userdata('ci',$row->ci);
+	  		  	$ci=trim($_POST['ci']);
+	  		  	echo "string";
 	  		 // $this->session->set_userdata('tipo',$row->tipo);
-	  		  redirect('usuarios/panel','refresh');
+	  		 // redirect('usuarios/panel','refresh');
+	  		  
 	  	    }
 	   }
 	  else
@@ -123,9 +164,9 @@ public function validarmensualidad()
 	   	//  $mensaje="ERROR DE  INGRESO ";
 	  	redirect('usuarios/index/1','refresh');
 	   }
-
+*/
  	
-  }
+  
   
  /**************************    M O D I F I C A R    USUARIOS  ADMINISTRADOR **********************/
  /******                         MODIFICAR  USU  Admi  para      *******/
@@ -198,10 +239,6 @@ public function USUAmodificarbased()
 	}
 
 
-
-
-
-
 /************************** M O D I F I C A R  ESTUDIANTES   **********************/
  /******  MODIFICAR  USU  Admi  para      *******/
 /*
@@ -263,13 +300,6 @@ public function ESTmodificar()
     }
 
  }
-
-
-
-/*
-
-
-
 
 /*
 class Usuarios extends CI_Controller 

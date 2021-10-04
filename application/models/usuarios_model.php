@@ -2,6 +2,9 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Usuarios_model extends CI_Model {
+ public function _construct(){
+ 		parent::_construct();
+ 	}
 
 /*************************** VALIDAR  LOGIN  &  PASSWORD   a USUARIOS **********************/
 
@@ -14,10 +17,21 @@ class Usuarios_model extends CI_Model {
 		return $this->db->get();
 	}
 /****************************   VALIDAR  MENSUALIDAD     *****************************/
+
+
+
+
+
+
+
+
+
+
 //usuarios_model->validarmensualidad($ci);
 
 public function validarMensualidad($ci)
 	{
+		//$this ->db->select('*') FROM ('mensualidad');
 		$this->db->select('*');
 		$this->db->from('mensualidad');
 		$this->db->where('ci',$ci);//ci de base datos  sea lo mismo  de el $login deL 											formulario intro
@@ -97,6 +111,12 @@ public function modificarUsuariosA($idProfesores,$data)
 public function agregarUsuarios($data)    // inserta datos en la tabla  usuarios
 	{
 		$this->db->insert('usuarios',$data);
+		if($this->db->affected_rows() >0){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 
 
