@@ -88,8 +88,8 @@ echo date('Y/m/d H:i:s');
  <tbody>
     <!--form method="post"-->
 <?php
-                 echo form_open_multipart('usuarios/validarmensualidad');
-                 // echo form_open_multipart('validarmensualidad');
+               echo form_open_multipart('usuarios/validarmensualidad');
+                
 ?>
       <h6>NO TIENEN DE LA MENSUALIDAD</h6>
 <?php

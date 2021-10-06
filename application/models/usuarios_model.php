@@ -18,16 +18,18 @@ class Usuarios_model extends CI_Model {
 	}
 /****************************   VALIDAR  MENSUALIDAD     *****************************/
 
+public function listar(){                             //LISTA   TODA LA TABLA  MENSUALIDAD 
+    $this->db->order_by('idmensualidad','desc');      //Ordenamos en forma desendente
+	$consulta=$this->db->get('mensualidad');
+	return $consulta->result();
+}
 
+public function detalle_ci($idmensualidad){          //LISTA EL DETALLE x ID LA TABLA  MENSUALIDAD
+	$this->db->where('idmensualidad',$idmensualidad);
+	$consulta=$this->db->get('mensualidad');
+	return $consulta->row();
 
-
-
-
-
-
-
-
-//usuarios_model->validarmensualidad($ci);
+}
 
 public function validarMensualidad($ci)
 	{

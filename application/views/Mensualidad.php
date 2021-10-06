@@ -96,7 +96,7 @@ echo date('Y/m/d H:i:s');
   //if (isset($_POST['register']))
  // { 
  ?>     
-       <input type="text" name="ci" placeholder="ci">
+       <input type="text" name="ci" placeholder="Introdusca CI">
        <!--input style="background: #EDF5FE" type="text" class="form-control" name="ci" value="<?php echo $row->ci; ?>"-->
 
        <input type="submit" name="register">
@@ -107,18 +107,28 @@ echo date('Y/m/d H:i:s');
  // else
  // {
  ?>
-      <br>
+        <br>
       <br>
       <p class="bad"> COMPLETE LOS CAMPOS</p>
+    
 <?php
  // }
 ?>
   </tbody>
 
   <?php  echo form_close(); ?>
-  
+<!--  ************* LISTA  TODA  LAS ci DE MENSUALIDAD *******************     -->
+<!----------------- LISTAR  TODO  LO  QUE  HAY  COLUM   ci--------------->
+<?php 
+  foreach ($variable as $item){
+ ?>
+    <h2> <?php echo $item->ci ; ?></h2>
+  <?php 
+  }
+ ?>
+<!----------------------------------------------------------------------->
 
-<!--
+<!------------- I C O N S---------------------------
  <li><a href="#">
     <i  id=i1 class="fas fa-swimmer fa-6x"></i> 
     <i id=i2 class="fas fa-swimmer fa-5x"></i>
@@ -133,8 +143,23 @@ echo date('Y/m/d H:i:s');
      <i id=i11 class="fas fa-swimmer fa-x"></i>
     </a>
 </li>
--->
- 
+->
+<!--  *************    prueba    *******************     -->
+
+<div class="tab-pane fade" id="tab2">
+  <div class="row">
+    <br>
+    <div class="col-lg-7"></div>
+    <div class="col-lg-3">
+      <input type="text" class="form-control" id="buscar" placeholder="BUSCAR">
+    </div>
+    <div class="col-lg-2">
+      <input type="button" class="btn-primary" id="btnbuscar" value="Mostrar">
+    </div>
+  </div>
+</div>
+
+
 <!--  /**************  T A B L A    MENSUALIDAD  *******************
 
 
@@ -171,23 +196,28 @@ echo date('Y/m/d H:i:s');
 <!--table class="table"-->
   <thead>
   <?php
-
+    //  ***************** BUTTON  DE   SALIDA *************************
               echo form_open_multipart('usuarios/USUsalir');
             //echo form_open_multipart('usuarios/logout');
  ?>   
   <div class="p-3 mb-2 bg-primary text-white" align="center">  DE  NATACIÓN</div>     
-    </div>      
+         
         <div style="text-align: center;">
         <button type="submit" class="btn btn-primary btn" align="center"> <i id=i12 class="fas fa-swimmer fa-sm"></i></button>
-        </div>
+      </div>
  <?php 
             echo form_close();
  ?>
   </thead>
+  <!--             F O N D O     PAG  -->
    <!--body id="fondo" style="background-image: url(<?php echo base_url();?>upload/c2.jpg);"-->
-       <!--body style="background: #EDF5FE" img src="<?php echo base_url(); ?> a1.jpg"--> 
+    <!--body style="background: #EDF5FE" img src="<?php echo base_url(); ?> a1.jpg"--> 
  
-<!--/table-->
+
+
+
+
+</table>
 
   </div>
 </div>
