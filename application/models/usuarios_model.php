@@ -16,11 +16,19 @@ class Usuarios_model extends CI_Model {
 		$this->db->where('password',$password);//pass de bd sea el mismo que el $pass del formu  											introducido
 		return $this->db->get();
 	}
+
+	public function validarMensu($ci)
+	{
+		$this->db->select('*');
+		$this->db->from('mensualidad');
+		$this->db->where('ci',$ci);//login de base datos  sea lo mismo  de el $login deL 											formulario intro
+		 return $this->db->get();
+	}
 /****************************   VALIDAR  MENSUALIDAD     *****************************/
 
 public function listar(){                             //LISTA   TODA LA TABLA  MENSUALIDAD 
     $this->db->order_by('idmensualidad','desc');      //Ordenamos en forma desendente
-	$consulta=$this->db->get('mensualidad');
+	$consulta=$this->db->get('mensualidad');          // DEL  idmensualidad
 	return $consulta->result();
 }
 

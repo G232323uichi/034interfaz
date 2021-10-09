@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-<?php echo form_open("usuarios/recibirdatos") ?>
+<?php echo form_open("usuarios/recibirDatos") ?>
 <?php
    // $nombre = array(
    //               'name' => 'nombre',

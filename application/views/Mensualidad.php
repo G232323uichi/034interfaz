@@ -77,7 +77,26 @@ color: #fff;
 
 
 -->
- 
+ <?php/*
+       switch ($msg)
+                {
+                  case '1':
+                  $mensaje="ERROR DE  INGRESO ";
+                  break;
+                   case '2':
+                  $mensaje="Acceso no valido";
+                  break;
+                   case '3':
+                  $mensaje="Gracias por usar el sistema";
+                  break;
+                  default:
+                  $mensaje="Ingrese sus datos";
+                  break;
+                }
+*/
+ ?>
+
+
 <div class="p-3 mb-2 bg-primary text-white" align="center">ESCUELA</div>
 <?php  
 date_default_timezone_set('America/La_Paz');
@@ -88,8 +107,8 @@ echo date('Y/m/d H:i:s');
  <tbody>
     <!--form method="post"-->
 <?php
-                 echo form_open_multipart('usuarios/validarmensualidad');
-                 // echo form_open_multipart('validarmensualidad');
+                echo form_open_multipart('usuarios/mensualidad');
+                // echo form_open_multipart('detalle_Mensualidad')
 ?>
       <h6>VERIFICACIÓN DE LA MENSUALIDAD</h6>
 <?php
@@ -109,7 +128,7 @@ echo date('Y/m/d H:i:s');
  ?>
         <br>
       <br>
-      <p class="bad"> COMPLETE LOS CAMPOS</p>
+      <p class="bad"> COMPLETE LOS CAMPOSooooooo</p>
     
 <?php
  // }
@@ -119,13 +138,17 @@ echo date('Y/m/d H:i:s');
   <?php  echo form_close(); ?>
 <!--  ************* LISTA  TODA  LAS ci DE MENSUALIDAD *******************     -->
 <!----------------- LISTAR  TODO  LO  QUE  HAY  COLUM   ci--------------->
-<?php 
-  foreach ($variable as $item){
- ?>
-    <h2> <?php echo $item->ci ; ?></h2>
-  <?php 
-  }
- ?>
+<!------- variable viene de function usuarios/validarmensualidad() --------------->
+
+
+<!--**********************************************/-->
+
+
+
+
+
+
+ 
 <!----------------------------------------------------------------------->
 
 <!------------- I C O N S---------------------------

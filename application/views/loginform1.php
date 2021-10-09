@@ -60,25 +60,22 @@
 
 <!--/******************************************************************************/-->
 <?php
-         switch ($msg)
-                {
+switch ($msg)
+{
 
-                  case '1':
-                  $mensaje="ERROR DE  INGRESO ";
-                  break;
-                   case '2':
-                  $mensaje="Acceso no valido";
-                  break;
-                   case '3':
-                  $mensaje="Gracias por usar el sistema";
-                  break;
-                 //  case:'4':
-                 // $mensaje="Ingrese sus datos";
-                 // break;
-                  default:
-                  $mensaje="Ingrese sus datos";
-                  break;
-                }
+  case '1':
+  $mensaje="ERROR DE  INGRESO ";
+  break;
+   case '2':
+  $mensaje="Acceso no valido";
+  break;
+   case '3':
+  $mensaje="Gracias por usar el sistema";
+  break;
+  default:
+  $mensaje="Ingrese sus datos";
+  break;
+}
 
 ?>
 <!--body style="background: #EDF5FE"-->
