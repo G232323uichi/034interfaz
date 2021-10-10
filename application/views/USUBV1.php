@@ -30,7 +30,7 @@
 }
 
 .dropdown {
-    position: relative;     le  da mas  dinamismo
+    position: relative;    /* le  da mas  dinamismo*/
     display: inline-block;
 }
 
@@ -104,8 +104,11 @@ width: 150%;
   <div class="dropdown-child">
     <nav class="top_menu">
       <ul>
-        <li><a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index3">MENSUALIDADES</a></li> 
-        <li><a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index6">INSUMOS</a></li> 
+      <!--li><a href="http://localhost/MVC4/034interfaz/index.php/estudiante/index3">MENSUALIDADES</a></li--> 
+       <!--li><a href="http://localhost/MVC4/034interfaz/index.php/usuarios/validarmen">MENSUALIDADES</a></li--> 
+        <li><a href="http://localhost/MVC4/034interfaz/index.php/usuarios/Mensualidad">MENSUALIDADES</a></li> 
+       
+     <li><!--a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index6">INSUMOS</a--></li> 
       </ul> 
      </nav>
   </div>
@@ -156,12 +159,12 @@ echo date('Y/m/d H:i:s');
 
 
     <?php
-        /************************    ESTUDIANTES  INSERTAR   ************************/
+        /************************   BOTON PARA  ESTUDIANTES  INSERTAR   ************************/
             echo form_open_multipart('estudiante/agregarP');
     ?>
-     <div style="text-align: right;">
-         <div style=" font-weight: bold;">INSERTAR </div>
- 
+     <div style="text-align: center;">
+         <div style=" font-weight: bold;">INSCRIBIR</div>
+         <div style=" font-weight: bold;">NUEVO</div>
          <button type="submit" class="btn btn-success btn-xs"><i id=i13 class="fas fa-swimmer  fa-2x"></i></button>
      </div>  
  
@@ -209,35 +212,35 @@ foreach ($EST-> result() as $row)
       <td><?php   echo $row->segundoApellido; ?></td>
       <td><?php   echo $row->ci;  ?></td>
       <td><?php   echo $row->nivel;  ?></td>
-      <td>
-  <?php     //   F O R M U L A R I O      ********  M O D I F I C A R ***********
+        <td>
+          <?php     //   F O R M U L A R I O      ********  M O D I F I C A R ***********
             echo form_open_multipart('estudiante/USUmodificar');
-   ?>
+          ?>
        <input type="hidden" name="idestudiantes" value="<?php echo $row->idestudiantes; ?>">
-         <button type="submit" class="btn btn-primary btn-xs"><i class="fas fa-edit"></i></button>
+       <button type="submit" class="btn btn-primary btn-xs"><i class="fas fa-edit"></i></button>
          <?php 
            echo form_close();
           ?>
        </td>
    <!-- /************************E L I M I N A R   LOGICA  *******************/-->
 
-<td>
-        <?php
+       <td>
+         <?php
             echo form_open_multipart('estudiante/EST_eliminar');
           ?>
-         <input type="hidden" name="idestudiantes" value="<?php echo $row->idestudiantes; ?>">
+          <input type="hidden" name="idestudiantes" value="<?php echo $row->idestudiantes; ?>">
          <button type="submit" class="btn btn-danger btn-xs"><i class="fas fa-eraser"></i></button>
          <?php 
             echo form_close();
           ?>
 
-</td>
+      </td>
   </tr>
   <?php 
- $indice++;  
+      $indice++;  
 }
 
- ?>
+   ?>
 
 
   </tbody>

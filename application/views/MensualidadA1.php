@@ -67,8 +67,9 @@ color: #fff;
 text-align: center;
 font-size: 70%;
 width: 100%;
-padding:2px ;
-background-color:#a22 ;
+padding:20px ;
+background-color:#4e8 ;
+/*background-color:#a22 ;*/
 color: #fff;
 
 }
@@ -79,7 +80,7 @@ color: #fff;
 
 -->
  <?php
-      switch ($msg1)
+   /*   switch ($msg1)
                 {
                   case '1':
                   $mensaje1="ERROR DE  INGRESO ";
@@ -94,7 +95,7 @@ color: #fff;
                   $mensaje1="Ingrese sus datos";
                   break;
                 }
-
+*/
  ?>
 
 
@@ -111,27 +112,33 @@ color: #fff;
 ?>
       <h6>VERIFICACIÓN DE LA MENSUALIDAD</h6>
 
-<!----------------  MENSAJE  DE  VALIDACION---------------------->
-  <div id=clas1 class="card-body" style="background-image: url(<?php echo base_url();?>upload/c1.jpg);">
+<!----------------  MENSAJE  DE  VALIDACION----------------------
+  <div id=clas1 class="card-body" style="background-image: url(<?php echo base_url();?>upload/a1.jpg);">
       <p class="login-box-msg"><?php echo $mensaje1; ?></p>
    </div> 
-  <!------------------------------------------------------------->    
-       <input type="text" name="ci" placeholder="Introdusca CI">
+  ------------------------------------------------------------->    
+       <input type="text" name="ci" placeholder="V O L V E R">
        <!--input style="background: #EDF5FE" type="text" class="form-control" name="ci" value="<?php echo $row->ci; ?>"-->
 
        <input type="submit" name="register">
       <!--/form-->
 <?php
- 
+ // }
 
-
-
+ // else
+ // {
  ?>
-    <br> 
+       <br> 
     <br>
-         <div>
-             <p class="bad" > COMPLETE EL CAMPO</p>
-        </div>
+  <div>
+      <!--p class="bad" > COMPLETE EL CAMPO</p-->
+  <div class="bad"style="font-weight: bold," >EL  ALUMNO ESTA REGISTRADO</div>
+      <p><?php echo "Mensualidad Pagada Bs.  " .$this->session->userdata('mensualidad') ?> </p>
+   <p><?php echo "Fecha " .$this->session->userdata('fecha_Actualizacion') ?> </p>
+
+ <!--div style="text-align: right;"></div-->  
+
+    </div>
 <?php
  // }
 ?>
@@ -192,7 +199,7 @@ color: #fff;
 <!--link href="css/bootstrap.min.css" rel="stylesheet"--> 
 
   
-<!--div style="font-weight: bold," >REGISTRO  DE  ALUMNOS
+<!--div style="font-weight: bold," >EL  ALUMNO ESTA REGISTRADO
  <div style="text-align: right;">
 </div-->
 

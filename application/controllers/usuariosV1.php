@@ -3,10 +3,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Usuarios extends CI_Controller
  {  
+ 	function _construct(){
+ 		parent::_construct();
+ 		$this->load->helper('form');
+ 		//$this->load->model('usuarios_model');
+ 	}
+/********************************* I N I C I O ****************************/
 	public function index()
-	{
-		$data['msg']=$this->uri->segment(3);  // se  recupera  un  numero  para mandar un  mensaje
-		if($this->session->userdata('login')) // si  E/  login de ssesion
+	{//index.php/controlador/metodo/urisegment3
+	 //index.php/usuarios/index/2	
+		$dat['msg']=$this->uri->segment(3);  // se  recupera  un  numero  para mandar un  mensaje
+		if($this->session->userdata('login')) // si  E/  login de ssesion de formulario  inicialixda login en este caso
 		{
 			redirect('usuarios/panel','refresh');  // se  va  PANEL  para  validar login y pass
 		}											//  si  la  session  esta avierta
@@ -14,7 +21,7 @@ class Usuarios extends CI_Controller
 		{
 			//lleva carga un login form  de  nuevo 
 		$this->load->view('inc_head.php');    //archivos de cabece
-   	    $this->load->view('loginform',$data); //contenido   formulario
+   	    $this->load->view('loginform',$dat); //contenido   formulario
 		$this->load->view('inc_footer.php');  //archivos del footer
 		}   
    }
@@ -32,7 +39,7 @@ class Usuarios extends CI_Controller
 	    	foreach($consulta->result() as $row)
 	    	{
 	  		//Se  existe  las varibl .... se crear las variables de  sesion
- //se crea la  variable de session ´ idusuario´  y que valor va tener idusuario sacado de BD escrito
+ //se crea la  variable de session ´ idusuarios´  y que el valor va tener idusuario sacado de BD escrito
 	  		  $this->session->set_userdata('idusuarios',$row->idusuarios);
 	  		  $this->session->set_userdata('login',$row->login);
 	  		  $this->session->set_userdata('tipo',$row->tipo);
@@ -45,7 +52,9 @@ class Usuarios extends CI_Controller
 	  	redirect('usuarios/index/1','refresh');
 	   }
     }
+/*********************************************************************/
 
+/***********************************************************************/
 
      public function panel()   // VALIDACION  DE  LOS  LOGIN  admi--
  {
@@ -69,9 +78,113 @@ class Usuarios extends CI_Controller
         }
   }
 
+ 
 
- /**************************    M O D I F I C A R    USUARIOS  ADMINISTRADOR **********************/
- /******                         MODIFICAR  USU  Admi  para      *******/
+/****************************************************************************************/
+/*
+public function validarmen()
+   
+ {   // $data['variable']=$this->usuarios_model->listar();
+ 				$this->load->view('inc_head.php');    //archivos de cabece
+   	            $this->load->view('Mensualidad1'); //contenido   formulario
+		        $this->load->view('inc_footer.php');  //archivos del footer
+
+ }
+*/
+public function mensualidad(){
+		$data['msg1']=$this->uri->segment(3);  // se  recupera  un  numero  para mandar un  mensaje
+		if($this->session->userdata('ci')) // si  E/  ci de ssesion de formulario  inicialixda login en este caso
+		{
+			redirect('usuarios/panel1','refresh');  // se  va  PANEL  para  validar login y pass
+		}											//  si  la  session  esta avierta
+		else
+		{
+
+	     
+ 		$this->load->view('inc_head.php');    //archivos de cabece
+ 	    //$this->load->view('Mensualidad');
+ 	    $this->load->view('Mensualidad',$data); //contenido   formulario
+		$this->load->view('inc_footer.php');  //archivos del footer 
+		
+		}
+  
+}
+
+	public function validarmensualidad()
+	{
+	  $ci=$_POST['ci'];              // llegan  login del formulario por POST de la BD
+      
+	  $consulta=$this->usuarios_model->validarMensu($ci);
+
+	  if($consulta->num_rows()>0)                        //si la  cantidad de  filas es > 0
+	  {
+	    	foreach($consulta->result() as $row)
+	    	{
+//Se  existe  las varibl .... se crear las variables de  sesion
+//se crea la  variable de session ´ idusuarios´  y que el valor va tener idusuario sacado de BD escrito
+	  		  $this->session->set_userdata('idmensualidad',$row->idmensualidad);
+	  		  $this->session->set_userdata('ci',$row->ci);
+	  		  $this->session->set_userdata('mensualidad',$row->mensualidad);
+	  		  $this->session->set_userdata('fecha_Actualizacion',$row->fecha_Actualizacion);
+	  		  redirect('usuarios/panel1','refresh');
+	  	    }
+	   }
+	  else
+	   {//sino  existe --> redirigimos a index enviando 1 en el  urisegment 3
+	   	//  $mensaje="ERROR DE  INGRESO ";
+	  	redirect('usuarios/mensualidad/1','refresh');
+	   }
+    }
+
+     public function panel1()   // VALIDACION  DE  LOS  LOGIN  admi--
+ {
+ 	if($this->session->userdata('ci'))
+ 	{
+ 		//redirect('usuarios/mensualidad1','refresh');
+ 		$this->load->view('inc_head.php');    //archivos de cabece
+ 	    //$this->load->view('Mensualidad');
+ 	    $this->load->view('MensualidadA',); //contenido   formulario
+		$this->load->view('inc_footer.php');  //archivos del footer 
+ 	}
+
+ 	else{
+ 		redirect('usuarios/mensualidad/2','refresh');
+ 	}
+
+  }
+
+     public function pru2()  
+ {
+ 		$this->load->view('inc_head.php');    //archivos de cabece
+ 	    $this->load->view('pru2',); //contenido   formulario
+		$this->load->view('inc_footer.php');  //archivos del footer 
+
+  }
+
+
+/*******  LISTA  EN  PRU3  cualquier campo de tabla mensualidad ********/
+ public function obtenerM(){
+ 	$data['mesu']=$this->usuarios_model->obtenerMensua();
+ 	$this->load->view('inc_head.php');    //archivos de cabece
+ 	    
+ 	$this->load->view('pru3',$data); //contenido   formulario
+	$this->load->view('inc_footer.php');  //archivos del footer 
+ 	
+ }
+
+
+
+/*******  NO  SE  QUE  HACE ********/
+   public function detalle_Mensualidad()	
+ // public function detalle_Mensualidad(idmensualidad)
+  {
+  	$id_mensual=$this->security->xss_clean($idmensualidad);
+  	$data['detalle']=$this->usuarios_model->detalle_ci($idmensualidad);
+
+  }
+  
+ /********    M O D I F I C A R    USUARIOS  ADMINISTRADOR **********************/
+ /*******************************  MODIFICAR  USU  Admi  para      *******/
 public function USUmodificar() 
 	{
 		$idusuarios=$_POST['idusuarios'];
@@ -124,7 +237,7 @@ public function USUAmodificar()
 
 public function USUAmodificarbased() 
 	{  
-		$idusuarios=$_POST['idusuarios'];
+-		$idusuarios=$_POST['idusuarios'];
 		
 
 		$data['nombres']=$_POST['nombres'];     //escrito BD  tiene q ser = escrito  POR MI EN formulario
@@ -139,10 +252,6 @@ public function USUAmodificarbased()
 		$this->usuarios_model->modificarUsuariosA($idusuarios,$data);   
 		redirect('usuarios/index','refresh');
 	}
-
-
-
-
 
 
 /************************** M O D I F I C A R  ESTUDIANTES   **********************/
@@ -199,20 +308,19 @@ public function ESTmodificar()
 		}
     }
  */
+ /**********************S A L I D A **************************/
      public function logout()     // /*cerramos  el  codigo  
     {
     $this->session->sess_destroy();
     redirect('usuarios/index/3','refresh');   //sino redirigimos a index  con  codigo 2 en el urisegment 3
     }
-
+     public function mensalir() 
+   {
+    redirect('estudiantes/index1','refresh');
+	
+   }
+/*******************************************************/
  }
-
-
-
-/*
-
-
-
 
 /*
 class Usuarios extends CI_Controller 

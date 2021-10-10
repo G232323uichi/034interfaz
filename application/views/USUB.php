@@ -105,7 +105,9 @@ width: 150%;
     <nav class="top_menu">
       <ul>
       <!--li><a href="http://localhost/MVC4/034interfaz/index.php/estudiante/index3">MENSUALIDADES</a></li--> 
-       <li><a href="http://localhost/MVC4/034interfaz/index.php/usuarios/validarmen">MENSUALIDADES</a></li> 
+       <!--li><a href="http://localhost/MVC4/034interfaz/index.php/usuarios/validarmen">MENSUALIDADES</a></li--> 
+        <li><a href="http://localhost/MVC4/034interfaz/index.php/usuarios/Mensualidad">MENSUALIDADES</a></li> 
+       
      <li><!--a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index6">INSUMOS</a--></li> 
       </ul> 
      </nav>
@@ -144,7 +146,7 @@ width: 150%;
 
   
 <!--div style=" font-weight: bold;">REGISTRO  DE  ALUMNOS</div-->
-<h3 style="font-weight:bolder;">REGISTRO  DE  ESTUDIANTES   </h3>
+<h3 style="font-weight:bolder;">REGISTRO  DE  ESTUDIANTESvvvvvv   </h3>
 
 
 
@@ -160,7 +162,7 @@ echo date('Y/m/d H:i:s');
         /************************   BOTON PARA  ESTUDIANTES  INSERTAR   ************************/
             echo form_open_multipart('estudiante/agregarP');
     ?>
-     <div style="text-align: right;">
+     <div style="text-align: center;">
          <div style=" font-weight: bold;">INSCRIBIR</div>
          <div style=" font-weight: bold;">NUEVO</div>
          <button type="submit" class="btn btn-success btn-xs"><i id=i13 class="fas fa-swimmer  fa-2x"></i></button>

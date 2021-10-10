@@ -49,7 +49,13 @@ public function validarMensualidad($ci)
 		return $this->db->get();
 	}
 
-
+/*******  NO  SE  QUE  HACE ********/
+ public function obtenerMensua(){
+ 	$query=$this->db->get('mensualidad');
+ 		if($query->num_rows()>0)
+ 			return $query;
+ 		else return false;
+}
 
 /*******************************************************************************/
 

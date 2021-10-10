@@ -98,8 +98,9 @@ width: 150%;
         <div style="text-align: center;">
         <button id=bu13 type="submit" class="btn btn-primary btn" align="center"> <i id=i13 class="fas fa-swimmer fa-sm"></i></button>
         </div>
+<!--/*****************  BOTON  DE  SALIR ******************************************/-->
  <?php 
-            echo form_close();
+            echo form_close();    // cerrar  el  formulario
  ?>
 <!--/***************** USURIOS   ADMINISTRADOR   **********************************/-->
 <div class="dropdown">

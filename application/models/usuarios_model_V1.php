@@ -2,35 +2,90 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Usuarios_model extends CI_Model {
+ public function _construct(){
+ 		parent::_construct();
+ 	}
+
+/*************************** VALIDAR  LOGIN  &  PASSWORD   a USUARIOS **********************/
 
 	public function validar($login,$password)
 	{
 		$this->db->select('*');
 		$this->db->from('usuarios');
-		$this->db->where('login',$login);//login de base datos  sea lo mismo  de el $login de formilario intro
-		$this->db->where('password',$password);//pass de bd sea el mismo que el $pass del formu  introducido
+		$this->db->where('login',$login);//login de base datos  sea lo mismo  de el $login deL 											formulario intro
+		$this->db->where('password',$password);//pass de bd sea el mismo que el $pass del formu  											introducido
 		return $this->db->get();
 	}
 
+	public function validarMensu($ci)
+	{
+		$this->db->select('*');
+		$this->db->from('mensualidad');
+		$this->db->where('ci',$ci);  //ci de base datos  sea lo mismo  de el ci deL 											formulario intro
+		 return $this->db->get();
+	}
+/****************************   VALIDAR  MENSUALIDAD     *****************************/
+
+public function listar(){                             //LISTA   TODA LA TABLA  MENSUALIDAD 
+    $this->db->order_by('idmensualidad','desc');      //Ordenamos en forma desendente
+	$consulta=$this->db->get('mensualidad');          // DEL  idmensualidad
+	return $consulta->result();
+}
+
+public function detalle_ci($idmensualidad){          //LISTA EL DETALLE x ID LA TABLA  MENSUALIDAD
+	$this->db->where('idmensualidad',$idmensualidad);
+	$consulta=$this->db->get('mensualidad');
+	return $consulta->row();
+
+}
+
+public function validarMensualidad($ci)
+	{
+		//$this ->db->select('*') FROM ('mensualidad');
+		$this->db->select('*');
+		$this->db->from('mensualidad');
+		$this->db->where('ci',$ci);//ci de base datos  sea lo mismo  de el $login deL 											formulario intro
+		//$this->db->where('password',$password);//pass de bd sea el mismo que el $pass del formu  											introducido
+		return $this->db->get();
+	}
+
+/*******  NO  SE  QUE  HACE ********/
+ public function obtenerMensua(){
+
+ 	$query=$this->db->get('mensualidad');
+ 		if($query->num_rows()>0)
+ 			return $query;
+ 		  else return false;
+}
+
+/*******************************************************************************/
 
 	  public function lista()      //lista  TODOS  la  tabla USUARIOS todo CON  ESTADO 1 si es 0 no  select o lista 
 	{
 		$this->db->select('*');
 		$this->db->from('usuarios');
-		$this->db->where('estado',1);  //SOLO  ECHO  ESTADO =1
-		//$this->db->where('tipo',$tipo='admi'); 
+		$this->db->where('estado',1);              //SOLO  ECHO  ESTADO =1
+		$this->db->where('tipo',$tipo='admi');     //solo  echo  el  tipo  admi
 		return $this->db->get();
 	}
-/******************          ESTUDIANTES     ***********/
- public function listaEST()      //lista  SOLO  la  tabla USUARIOS todo CON  ESTADO 1 y tipo  usu  of lista 
+
+/******************         TABLA  ESTUDIANTES     ***********/
+ public function listaEST()      //lista  SOLO  la  tabla ESTUDIANT todo CON  ESTADO 1   
 	{
 		$this->db->select('*');
 		$this->db->from('estudiantes');
-		$this->db->where('estado',1);						 //SOLO  ECHO  ESTADO =1	//$this->db->where('tipo',$tipo='usu');                //SOLO  ECHO  tipo = usu
+		$this->db->where('estado',1);			  //SOLO  ECHO  ESTADO =1	//$this->db->where('tipo',$tipo='usu');   //SOLO  ECHO  tipo = usu  no VA solo Estudnt
 		return $this->db->get();
 	}
 
-
+ /*public function listaUsu()//lista  SOLO  la  tabla USUARIOS todo CON  ESTADO 1 y tipo  usu  of lista 
+	{
+	  $this->db->select('*');
+	  $this->db->from('estudiantes');
+	  $this->db->where('estado',1);				//SOLO  ECHO  ESTADO =1	$this->db->where('tipo',$tipo='usu');     //SOLO  ECHO  tipo = usu
+	  return $this->db->get();
+	}
+*/
 /****************   M O D I F I C A R   USUARIOS   ADMI recuperarUsuario**************************/
 
 
@@ -51,20 +106,19 @@ public function modificarUsuarios($idusuarios,$data)
 	}
 /****************   M O D I F I C A R   USUA  PROFESOR  recuperarUsuario**************************/
 
-public function recuperarUsuarioA($idusuarios)   //*recuperar  idusuarios por modificarMMMMMMMMMMM 
+public function recuperarUsuarioA($idProfesores) //*recuperar tbl PROFESORES por MODIcar 
 	{
 	 $this->db->select('*');
-	 $this->db->from('usuarios');
-	 $this->db->where('idusuarios',$idusuarios); //del  formulario ..a == lo introducido $id por teclad o form
+	 $this->db->from('profesores');
+	 $this->db->where('idProfesores',$idProfesores); //del  formulario ..a == lo introducido $id por teclad o form
 	 return $this->db->get();
 	}
 
-
-public function modificarUsuariosA($idusuarios,$data)   
+public function modificarUsuariosA($idProfesores,$data)   
                											//recuperar  CI,nombre,apellidos pr modificarMMMMMMMMMM 
 	{
-		$this->db->where('idusuarios',$idusuarios);
-		$this->db->update('usuarios',$data);
+		$this->db->where('idProfesores',$idProfesores);
+		$this->db->update('profesores',$data);
 		
 	}
 
@@ -74,6 +128,12 @@ public function modificarUsuariosA($idusuarios,$data)
 public function agregarUsuarios($data)    // inserta datos en la tabla  usuarios
 	{
 		$this->db->insert('usuarios',$data);
+		if($this->db->affected_rows() >0){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 
 
@@ -87,7 +147,7 @@ public function agregarUsuarios($data)    // inserta datos en la tabla  usuarios
 }
 
 /****************   M O D I F I C A R   ESTUDIANTES   **************************/
-                
+             
 public function recuperarEstudiantes($idestudiantes)   //*recuperar  idestudiantes por modificarMMMMMMMMMMM 
 	{
 		$this->db->select('*');
@@ -104,6 +164,23 @@ public function modificarEstudiantes($idestudiantes,$data)
 		$this->db->update('estudiantes',$data);
 		
 	}
+/****************   M O D I F I C A R   MENSUALIDAD    **************************/
+               
+public function recuperarMensualidad($idmensualidad)   //*recuperar  idestudiantes por modificarMMMMMMMMMMM 
+	{
+		$this->db->select('*');
+		$this->db->from('mensualidad');
+		$this->db->where('idmensualidad',$idmensualidad);
+		return $this->db->get();
+	}
+public function modificarMensualidad($idmensualidad,$data)   
+               											//recuperar  CI,nombre,apellidos pr modificarMMMMMMMMMM 
+	{
+		$this->db->where('idmensualidad',$idmensualidad);
+		$this->db->update('mensualidad',$data);
+		
+	}
+
 /******************  E L I  M I N A R     LO G I CO  USUARIOS  ************************************/
 
 public function Elimiusuarios($idusuarios)   /*recuperar  idpersona pr modificar */

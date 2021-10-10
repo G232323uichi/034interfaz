@@ -26,12 +26,12 @@ text-align: center;
 
 }
 form{
-padding: 50px 5px;
+padding: 50px 20px;
 background-color: #ededed;
 margin: calc(25% + 100px);
 margin-top: 10px;
-padding-top: 28pX;
-margin-bottom: 30px;
+padding-top: 25pX;
+margin-bottom: 3px;
 
 }
 h1{
@@ -65,84 +65,76 @@ color: #fff;
 }
 .bad{
 text-align: center;
+font-size: 70%;
 width: 100%;
-padding:12px ;
+padding:2px ;
 background-color:#a22 ;
 color: #fff;
 
 }
 
 </style>
-            <!--  /**************  T A B L A    MENSUALIDAD  *******************
+            <!--  /****background-color:#a22 **********  T A B L A    MENSUALIDAD  *******************
 
 
 -->
- <?php/*
-       switch ($msg)
+ <?php
+      switch ($msg1)
                 {
                   case '1':
-                  $mensaje="ERROR DE  INGRESO ";
+                  $mensaje1="ERROR DE  INGRESO ";
                   break;
                    case '2':
-                  $mensaje="Acceso no valido";
+                  $mensaje1="Acceso no valido";
                   break;
                    case '3':
-                  $mensaje="Gracias por usar el sistema";
+                  $mensaje1="Gracias por usar el sistema";
                   break;
                   default:
-                  $mensaje="Ingrese sus datos";
+                  $mensaje1="Ingrese sus datos";
                   break;
                 }
-*/
+
  ?>
 
 
 <div class="p-3 mb-2 bg-primary text-white" align="center">ESCUELA</div>
-  <div class="p-3 mb-2 bg-primary text-white" align="center">  DE  NATACIÓN</div> 
-<!--   H O R A ?php  
-date_default_timezone_set('America/La_Paz');
-echo date('Y/m/d H:i:s');
- ?-->
   
  <tbody>
     <!--form method="post"-->
+    
 <?php
-                 echo form_open_multipart('usuarios/mensualidad');
-                 // echo form_open_multipart('validarmensualidad');
+                 echo form_open_multipart('usuarios/validarmensualidad');
+
+                // echo form_open_multipart('detalle_Mensualidad ')
+                // echo form_open_multipart('usuarios/validarmen')
 ?>
       <h6>VERIFICACIÓN DE LA MENSUALIDAD</h6>
-<?php
-  //if (isset($_POST['register']))
- // { 
- ?>     
+
+<!----------------  MENSAJE  DE  VALIDACION---------------------->
+  <div id=clas1 class="card-body" style="background-image: url(<?php echo base_url();?>upload/c1.jpg);">
+      <p class="login-box-msg"><?php echo $mensaje1; ?></p>
+   </div> 
+  <!------------------------------------------------------------->    
        <input type="text" name="ci" placeholder="Introdusca CI">
        <!--input style="background: #EDF5FE" type="text" class="form-control" name="ci" value="<?php echo $row->ci; ?>"-->
 
        <input type="submit" name="register">
       <!--/form-->
 <?php
- // }
+ 
 
- // else
- // {
+
+
  ?>
-        <br>
-      <br>
-      <p class="bad"> COMPLETE LOS CAMPOS</p>
-    
+    <br> 
+    <br>
+         <div>
+             <p class="bad" > COMPLETE EL CAMPO</p>
+        </div>
 <?php
  // }
 ?>
- <?php
-    //  ***************** BUTTON  DE   SALIDA *************************/
-              echo form_open_multipart('usuarios/mensalir');
-            //echo form_open_multipart('usuarios/logout');
- ?>       
-     
-        <div style="text-align: center;">
-        <button type="submit" class="btn btn-primary btn" align="center"> <i id=i12 class="fas fa-swimmer fa-sm"></i></button>
- <!--  //********************************************************************/ --> 
-      </div>
   </tbody>
 
   <?php  echo form_close(); ?>
@@ -150,14 +142,14 @@ echo date('Y/m/d H:i:s');
 <!----------------- LISTAR  TODO  LO  QUE  HAY  COLUM   ci--------------->
 <!------- variable viene de function usuarios/validarmensualidad() --------------->
 
-<!--?php /*
- foreach ($variable as $item){
- ?>
-    <h2> ?php echo $item->ci ; ?></h2-->
-  <!--?php 
-  }
-  */
- ?-->
+
+<!--**********************************************/-->
+
+
+
+
+
+
  
 <!----------------------------------------------------------------------->
 
@@ -176,8 +168,8 @@ echo date('Y/m/d H:i:s');
      <i id=i11 class="fas fa-swimmer fa-x"></i>
     </a>
 </li>
--->
-<!--  *************    prueba    *******************     
+->
+<! *************    prueba    *******************     -->
 
 <div class="tab-pane fade" id="tab2">
   <div class="row">
@@ -192,7 +184,7 @@ echo date('Y/m/d H:i:s');
   </div>
 </div>
 
--->
+
 <!--  /**************  T A B L A    MENSUALIDAD  *******************
 
 
@@ -200,7 +192,9 @@ echo date('Y/m/d H:i:s');
 <!--link href="css/bootstrap.min.css" rel="stylesheet"--> 
 
   
-<!--div style=" font-weight: bold;">REGISTRO  DE  ALUMNOS</div-->
+<!--div style="font-weight: bold," >REGISTRO  DE  ALUMNOS
+ <div style="text-align: right;">
+</div-->
 
   
 <!--h3 style="font-weight:bolder;">TABLA  5</h3-->
@@ -227,9 +221,17 @@ echo date('Y/m/d H:i:s');
  -->
   
 <!--table class="table"-->
-
   <thead>
-
+  <?php
+    //  ***************** BUTTON  DE   SALIDA *************************
+              echo form_open_multipart('usuarios/USUsalir');
+            //echo form_open_multipart('usuarios/logout');
+ ?>   
+  <div class="p-3 mb-2 bg-primary text-white" align="center">  DE  NATACIÓN</div>     
+         
+        <div style="text-align: center;">
+        <button type="submit" class="btn btn-primary btn" align="center"> <i id=i12 class="fas fa-swimmer fa-sm"></i></button>
+      </div>
  <?php 
             echo form_close();
  ?>

@@ -311,7 +311,7 @@ public function USU_agregarbased()
 		$data['nombres']=$_POST['nombres'];
 		$data['primerApellido']=$_POST['primer_apellido'];  /*escrit0 BD  tiene q ser = escrito formulario*/
 		$data['segundoApellido']=$_POST['segundo_apellido'];
-		$data['ci']=$_POST['ci'];
+		//$data['ci']=$_POST['ci'];
 		$this->estudiante_model->agregarPersona($data);   
 		redirect('estudiante/index','refresh');
 	}
