@@ -146,7 +146,7 @@ width: 150%;
 
   
 <!--div style=" font-weight: bold;">REGISTRO  DE  ALUMNOS</div-->
-<h3 style="font-weight:bolder;">REGISTRO  DE  ESTUDIANTESvvvvvv   </h3>
+<h3 style="font-weight:bolder;">REGISTRO  DE  ESTUDIANTES   </h3>
 
 
 
@@ -159,12 +159,12 @@ echo date('Y/m/d H:i:s');
 
 
     <?php
-        /************************   BOTON PARA  ESTUDIANTES  INSERTAR   ************************/
-            echo form_open_multipart('estudiante/agregarP');
+        /*****************  BOTON PARA  ESTUDIANTES  INSERTAR   ************************/
+    echo form_open_multipart('estudiante/agregarP');
     ?>
-     <div style="text-align: center;">
+         <div style="text-align: center;">
          <div style=" font-weight: bold;">INSCRIBIR</div>
-         <div style=" font-weight: bold;">NUEVO</div>
+         <div style=" font-weight: bold;"> A  NUEVO</div>
          <button type="submit" class="btn btn-success btn-xs"><i id=i13 class="fas fa-swimmer  fa-2x"></i></button>
      </div>  
  

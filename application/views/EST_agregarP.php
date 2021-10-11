@@ -23,15 +23,15 @@
   <input type="text" class="form-control" name="segundo_apellido"placeholder="Escriba el Segundo Apellido ">
   </div>
     <div class="mb-3">
-    <label class="form-label">Nivel</label>
-    <input type="text" class="form-control" name="nivel" placeholder="Escriba el CI ">
+    <label class="form-label">CI</label>
+    <input type="text" class="form-control" name="ci" placeholder="Escriba el CI ">
   </div>
-<!--
+
   <div class="mb-3">
-    <label class="form-label">Nombre</label>
-    <input type="text" class="form-control" name="Nota" placeholder="Escriba la Nombre ">
+    <label class="form-label">Nivel</label>
+    <input type="text" class="form-control" name="nivel" placeholder="Escriba el nivel ">
   </div>
--->
+
   <button type="submit" class="btn btn-success">INSERTE</button>
 
  <?php
@@ -43,9 +43,9 @@
  ?>
     <div style="text-align: right;">
     <button type="submit" class="btn btn-primary " align="center">S A R L I R</button>
-     </div>    
+    </div>    
  <?php 
-            echo form_close();
+      echo form_close();
  ?> 
 
     </div>

@@ -60,7 +60,7 @@ public function agregarUsuarios($data)    // inserta datos en la tabla  usuarios
 /************************************************************************************/
 /*****************************  MODIFICAR   ESTUDIANTES   ******************/
 	 
-public function recuperarEstudiantes($idEstudiantes)   //*recuperar  idusuarios por modificarMMMMMMMMMMM 
+/*public function recuperarEstudiantes($idEstudiantes)   //*recuperar  idusuarios por modificarMMMMMMMMMMM 
 	{
 		$this->db->select('*');
 		$this->db->from('estudiantes');
@@ -76,8 +76,9 @@ public function modificarEstudiantes($idestudiantes,$data)
 		$this->db->update('estudiantes',$data);
 		
 	}
-/******************************* i n s e r t a r  *//////////////////////////////
-
+*/
+/*****i n s e r t a r   a  ESTUDIANTES  */
+				
 public function agregarPersona($data)
 	{
 		$this->db->insert('estudientes',$data);

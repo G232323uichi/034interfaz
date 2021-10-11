@@ -69,6 +69,7 @@ public function validarMensualidad($ci)
 	}
 
 /******************         TABLA  ESTUDIANTES     ***********/
+/*
  public function listaEST()      //lista  SOLO  la  tabla ESTUDIANT todo CON  ESTADO 1   
 	{
 		$this->db->select('*');
@@ -76,7 +77,7 @@ public function validarMensualidad($ci)
 		$this->db->where('estado',1);			  //SOLO  ECHO  ESTADO =1	//$this->db->where('tipo',$tipo='usu');   //SOLO  ECHO  tipo = usu  no VA solo Estudnt
 		return $this->db->get();
 	}
-
+*/
  /*public function listaUsu()//lista  SOLO  la  tabla USUARIOS todo CON  ESTADO 1 y tipo  usu  of lista 
 	{
 	  $this->db->select('*');
