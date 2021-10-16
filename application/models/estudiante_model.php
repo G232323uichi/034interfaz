@@ -77,10 +77,11 @@ public function modificarEstudiantes($idestudiantes,$data)
 		
 	}
 */
-/*****i n s e r t a r   a  ESTUDIANTES  */
-				
+/***************    I N S E R T A R      a  ESTUDIANTES  *****************/				
+
 public function agregarPersona($data)
 	{
+		$this->db->from('estudiantes');
 		$this->db->insert('estudientes',$data);
 	}
 
