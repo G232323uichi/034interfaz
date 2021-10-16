@@ -113,7 +113,7 @@ echo date('Y/m/d H:i:s');
 <!--tbody-->
 <?php 
 $indice=1;
-foreach ($EST-> result() as $row)
+foreach ($profe-> result() as $row)
 {       /************************    P R O F E  S O R    ************************/
  
   ?>

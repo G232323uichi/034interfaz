@@ -1,7 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
-
+/*public function _construct(){
+	parent::_construct();
+	$this->load->model('usuarios_model');
+	$this->load->model('estudiante_model');
+}
+*/
 class Estudiante extends CI_Controller {
 
 /********************  VISTA  DE  TRES   SESIONES ***********************/
@@ -39,14 +43,17 @@ public function index()     //LOGIN   ADMINISTRADOR
  /*****************************************************************************/
 /****************************   TABLA     REG  MENSUALIDAD *********************/ 
 
-public function index3() // REGISTRO  DE  ESTUDIANTES ANTIGUO NO VA 
+public function index3() // REGISTRO  DE  ESTUDIANTES ANTIGUO  VA 
 	{
 		$lista=$this->estudiante_model->lista3();
 		$data['EST']=$lista;
 	
 
 		$this->load->view('inc_head.php');    //archivos de cabecera
-		$this->load->view('EST',$data); //contenido
+		//$this->load->view('Mensualidad',$data); //contenido
+		$this->load->view('Mensualidad');
+		
+		//$this->load->view('EST',$data); //contenido mensualidad
 		$this->load->view('inc_footer.php');  //archivos del footer
 		
 	}
@@ -196,7 +203,28 @@ public function USU_agregarbased()
 			$this->usuarios_model->agregarUsuarios($data);   
 		redirect('estudiante/index','refresh');
 	}
-
+/******************************* TABLA  ESTUDIANTES   INSERT   ***************************/
+	public function agregarP()  
+	{
+		$this->load->view('inc_head.php');    //archivos de cabecera
+		$this->load->view('EST_agregarP'); //contenido
+		$this->load->view('inc_footer.php');  //archivos del footer
+	}
+         
+	public function agregarbased ()
+	{
+		$data['nombres']=$_POST['nombres'];
+		$data['primerApellido']=$_POST['primer_apellido'];  /*escrit0 BD  tiene q ser = escrito formulario*/
+		$data['segundoApellido']=$_POST['segundo_apellido'];
+		$data['ci']=$_POST['ci'];
+		$data['nivel']=$_POST['nivel'];
+		$this->usuarios_model->agregarPersona($data); 
+		//$this->estudiante_model->agregarPersona($data);   
+		redirect('estudiante/index1','refresh');
+		
+	}
+	
+/*****************************************************************************************/
  /*******************************                   *********************************/
  /***********************************************************************************/
 
@@ -295,25 +323,7 @@ public function USU_agregarbased()
 		redirect('estudiante/index','refresh');
 	}
 	/****************************************************************************/
-/******************************* TABLA  ESTUDIANTES   INSERT   ***************************/
-	public function agregarP()  
-	{
-		$this->load->view('inc_head.php');    //archivos de cabecera
-		$this->load->view('EST_agregarP'); //contenido
-		$this->load->view('inc_footer.php');  //archivos del footer
-	}
 
-	public function agregarbased ()
-	{
-		$data['nombres']=$_POST['nombres'];
-		$data['primerApellido']=$_POST['primer_apellido'];  /*escrit0 BD  tiene q ser = escrito formulario*/
-		$data['segundoApellido']=$_POST['segundo_apellido'];
-		$data['ci']=$_POST['ci'];
-		$this->estudiante_model->agregarPersona($data);   
-		redirect('estudiante/index','refresh');
-	}
-	
-/*****************************************************************************************/
 /**********************     ELIMINAR  MENSUALIDAD  ****************************************/
 	public function MEN_eliminar()
 	{     
@@ -449,8 +459,7 @@ public function USUmodificar()   //******  MODIFICAR  ESTUDIANTES  para      ***
 
 */
 	/*********************************************************************/
-		public function index22
-		()
+		public function index22()
 	{
 		$lista=$this->estudiante_model->lista1();
 		$data['estudiantes']=$lista;

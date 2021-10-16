@@ -1,11 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-/*public function _construct(){
-	parent::_construct();
+/*public function __construct(){
+	parent::__construct();
 	$this->load->model('usuarios_model');
 	$this->load->model('estudiante_model');
+
 }
 */
+
+
+
+
 class Estudiante extends CI_Controller {
 
 /********************  VISTA  DE  TRES   SESIONES ***********************/
@@ -21,9 +26,9 @@ public function index()     //LOGIN   ADMINISTRADOR
 
  public function index2()  //LOGIN  PROFESOR
 	{
-		//$lista=$this->estudiante_model->lista1();
-		$lista=$this->usuarios_model->listaUsu();
-		$data['EST']=$lista;
+		$lista=$this->estudiante_model->lista1();
+		//$lista=$this->usuarios_model->listaUsu();
+		$data['profe']=$lista;
 
 		$this->load->view('inc_head.php');    //archivos de cabecer
 		$this->load->view('USUA',$data);
@@ -168,10 +173,12 @@ public function MENmodificar()
 redirect('estudiante/index','refresh');
 	
 }
+/************************   I N  S  E  R  T A  R  ************************/
 
-/*******************************************************************************************************/
-/********   I N  S  E  R  T A  R  *** U S U A R I O S     USU    ADMINISTRACION*******************/
-				
+/*************************************************************************************/
+/********   I N  S  E  R  T A  R  *** U S U A R I O S     USU    ADMINISTRACION*********/
+
+	 //('estudiante/USU_agregar');			
 	public function USU_agregar()
 	{
 		$this->load->view('inc_head.php');    //archivos de cabecera
@@ -179,7 +186,7 @@ redirect('estudiante/index','refresh');
 		//$this->load->view('TEST');          //contenido del  formulario prueba
 		$this->load->view('inc_footer.php');  //archivos del footer
 	}
-
+   
 public function USU_agregarbased()
 	{ // BASE                    FORMULARIO
 		$data['nombres']=$_POST['nombres'];
@@ -204,14 +211,17 @@ public function USU_agregarbased()
 		redirect('estudiante/index','refresh');
 	}
 /******************************* TABLA  ESTUDIANTES   INSERT   ***************************/
-	public function agregarP()  
+      //('estudiante/USUB_agregarP')
+  
+	public function USUB_agregarP()   // USUB
 	{
 		$this->load->view('inc_head.php');    //archivos de cabecera
 		$this->load->view('EST_agregarP'); //contenido
 		$this->load->view('inc_footer.php');  //archivos del footer
 	}
-         
-	public function agregarbased ()
+
+  //   ('estudiante/USUB_agregarbased')      
+	public function USUB_agregarbased ()
 	{
 		$data['nombres']=$_POST['nombres'];
 		$data['primerApellido']=$_POST['primer_apellido'];  /*escrit0 BD  tiene q ser = escrito formulario*/

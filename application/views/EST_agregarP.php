@@ -5,10 +5,13 @@
        <div class="p-3 mb-2 bg-primary text-white"align="center">ESCUELA  DE  NATACIÓN</div>
         <div class="p-3 mb-2 bg-primary text-white"align="center">INSERTAR REGISTRO ESTUDIANTES</div>
 <?php
-
-  echo form_open_multipart('estudiante/agregarbased'); // medoto agregar en  la  BD()
+  //echo form_open_multipart('estudiante/USU_agregarbased');
+  echo form_open_multipart('estudiante/USUB_agregarbased'); // medoto agregar en  la  BD()
  ?>
-  
+
+  <!---------  FORMULARIO   DE   INSERTAR   DE   USUB ( ESTUDIANTE)---------->
+
+
 <div class="mb-3">
     <label class="form-label">Nombre</label>
     <input type="text" class="form-control" name="nombres" placeholder="Escriba el Nombre ">
@@ -37,6 +40,7 @@
  <?php
   echo form_close();
   ?>
+  
  <?php
       echo form_open_multipart('usuarios/USUsalir');       
      //echo form_open_multipart('usuarios/logout');

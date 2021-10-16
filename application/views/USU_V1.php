@@ -98,21 +98,22 @@ width: 150%;
         <div style="text-align: center;">
         <button id=bu13 type="submit" class="btn btn-primary btn" align="center"> <i id=i13 class="fas fa-swimmer fa-sm"></i></button>
         </div>
+<!--/*****************  BOTON  DE  SALIR ******************************************/-->
  <?php 
-            echo form_close();
+            echo form_close();    // cerrar  el  formulario
  ?>
-<!--/***************** ***********************************************************/-->
+<!--/***************** USURIOS   ADMINISTRADOR   **********************************/-->
 <div class="dropdown">
   <!--button class="mainmenubtn"><i id=i1 class="fas fa-swimmer fa-sm"></i> </button-->
     <button class="mainmenubtn" > M E N U </button>
   <div class="dropdown-child">
     <nav class="top_menu">
       <ul>
-        <li><a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index3">ESTUDIANTES</a></li> 
-        <li><a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index6">PRODUCTOS</a></li> 
-        <li><a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index">Tabla1</a></li> 
+        <!--li><a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index3">ESTUDIANTES</a></li--> 
+        <!--li><a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index6">PRODUCTOS</a></li--> 
+        <!--li><a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index">Tabla1</a></li--> 
         <li><a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index5">INSUMOS</a></li>
-        <li><a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index4">HORARIOS</a></li>
+        <!--li><a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index4">HORARIOS</a></li-->
       </ul> 
      </nav>
   </div>
@@ -270,11 +271,14 @@ foreach ($EST-> result() as $row)
  ?>
          <!--input type="hidden" name="idusuarios" value="<?php date_default_timezone_set('America/La_Paz'); echo date('y/m/d g:ia'); ?>"-->
 
-         <input type="hidden" name="idusuarios" value="<?php echo $row->idusuarios; ?>">
-         <button  id=bu13 type="submit" class="btn btn-primary btn-xs"><i class="fas fa-edit"></i></button> 
+    <input type="hidden" name="idusuarios" value="<?php echo $row->idusuarios; ?>">
+
+    <button  id=bu13 type="submit" class="btn btn-primary btn-xs"><i class="fas fa-edit"></i></button>
+
  <?php 
-            echo form_close();
+    echo form_close();
  ?>
+
  </td>
 
 
@@ -297,7 +301,7 @@ foreach ($EST-> result() as $row)
      <td>  
           <?php
           /************************E L I M I N A R   LOGICA  *******************/
-            //echo form_open_multipart('estudiante/PER_eliminar');
+        
             echo form_open_multipart('estudiante/USU_eliminar');
           ?>
          <input type="hidden" name="idusuarios" value="<?php echo $row->idusuarios; ?>">

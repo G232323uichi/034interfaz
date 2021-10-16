@@ -82,7 +82,7 @@ public function validarMensualidad($ci)
 	{
 	  $this->db->select('*');
 	  $this->db->from('estudiantes');
-	  $this->db->where('estado',1);				//SOLO  ECHO  ESTADO =1	$this->db->where('tipo',$tipo='usu');     //SOLO  ECHO  tipo = usu
+	  $this->db->where('estado',1);				//SOLO  ECHO  ESTADO =1	$this->db->where('tipo',$tipo='usu');     //SOLO  ECHO  tipo = usu en USUARIO
 	  return $this->db->get();
 	}
 */
@@ -122,17 +122,25 @@ public function modificarUsuariosA($idProfesores,$data)
 		
 	}
 
-/***************    I N S E R T A R      a  ESTUDIANTES  *****************/				
+/***************    I N S E R T A R      a  ESTUDIANTES  *****************/		//
+
 public function agregarPersona($data)
 	{
 	
-		$this->db->insert('estudientes',$data);
+		$this->db->insert('estudiantes',$data);
+		if($this->db->affected_rows() >0){
+			return true;
+		}
+		else{
+			return false;
+		}
+
 	}
 
 
-/******************************  INSERT   USUARIOS   ********************************/
+/************  INSERT   USUARIOS (ADMINISTRACION)  *************************/
 
-
+//usuarios_model->agregarUsuarios($data); 
 public function agregarUsuarios($data)    // inserta datos en la tabla  usuarios
 	{
 		$this->db->insert('usuarios',$data);

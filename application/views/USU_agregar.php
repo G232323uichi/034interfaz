@@ -32,7 +32,7 @@ form{  position:fixed;
 </style>
 -->
 
-
+<!---------  FORMULARIO   DE   INSERTAR   DE   USU (ADMINISTRACION)------------>
  
               <div class="card-header">
                   <div class="card-header">
@@ -107,7 +107,7 @@ form{  position:fixed;
                    <?php
                    echo form_close();
                    ?>
-   <!-- /***************************************************************************************/-->
+   <!-- /**********************   SALIR  *******************************************/-->
                    <?php
                     echo form_open_multipart('usuarios/USUsalir');   // Sale a la pag anterior
                    ?> 

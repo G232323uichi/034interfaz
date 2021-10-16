@@ -156,22 +156,26 @@ echo date('Y/m/d H:i:s');
 
  ?>
 <br>
-
-
-    <?php
-        /************************   BOTON PARA  ESTUDIANTES  INSERTAR   ************************/
-            echo form_open_multipart('estudiante/agregarP');
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+ <?php
+        /*****************  BOTON PARA  ESTUDIANTES  INSERTAR   ************************/
+    echo form_open_multipart('estudiante/agregarP');
+    //echo form_open_multipart('estudiante/USU_agregar');
     ?>
-     <div style="text-align: center;">
+         <div style="text-align: center;">
          <div style=" font-weight: bold;">INSCRIBIR</div>
-         <div style=" font-weight: bold;">NUEVO</div>
+         <div style=" font-weight: bold;"> A  NUEVO ESTUDIANTEdddddddd</div>
          <button type="submit" class="btn btn-success btn-xs"><i id=i13 class="fas fa-swimmer  fa-2x"></i></button>
      </div>  
  
      <?php 
             echo form_close();
      ?>
- 
+
+
+
+
 <!--
     <a href="<? echo base_url(); ?>index.php/estudiante/agregar">
          <button type="submit" class="btn btn-success btn-xs">Agergar_Estudiante</button> 

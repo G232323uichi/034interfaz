@@ -12,11 +12,12 @@ class Estudiante_model extends CI_Model {
 		return $this->db->get();
 	}
 
-	public function lista1()      /*lista  la  tabla profesores */
+	public function lista1()      /*lista  la  tabla profesores*/ 
 	{
 		$this->db->select('*');
 		$this->db->from('profesores');
-	//	$this->db->where('1',$estado);
+		//$this->db->where('1',$estado);
+		
 		return $this->db->get();
 	}
 
@@ -78,14 +79,14 @@ public function modificarEstudiantes($idestudiantes,$data)
 	}
 */
 /***************    I N S E R T A R      a  ESTUDIANTES  *****************/				
-
+/***************************************
 public function agregarPersona($data)
 	{
 		$this->db->from('estudiantes');
 		$this->db->insert('estudientes',$data);
 	}
 
-
+*/
 /*******************************   MODIFICAR   USUARIOS *** NO ************/
 /*
 public function recuperarUsuario($idusuarios)            //recuperar  idusuarios pr modificar 

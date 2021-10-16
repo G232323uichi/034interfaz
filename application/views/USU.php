@@ -173,11 +173,11 @@ echo date('Y/m/d H:i:s');
     <?php
             echo form_open_multipart('estudiante/USU_agregar');
      ?>
+         <!--i id=i11 class="fas fa-swimmer fa-x"></i> <i id=i11 class="fas fa-swimmer fa-x"></i>
          <i id=i11 class="fas fa-swimmer fa-x"></i> <i id=i11 class="fas fa-swimmer fa-x"></i>
          <i id=i11 class="fas fa-swimmer fa-x"></i> <i id=i11 class="fas fa-swimmer fa-x"></i>
          <i id=i11 class="fas fa-swimmer fa-x"></i> <i id=i11 class="fas fa-swimmer fa-x"></i>
-         <i id=i11 class="fas fa-swimmer fa-x"></i> <i id=i11 class="fas fa-swimmer fa-x"></i>
-         <i id=i11 class="fas fa-swimmer fa-x"></i> <i id=i11 class="fas fa-swimmer fa-x"></i>
+         <i id=i11 class="fas fa-swimmer fa-x"></i> <i id=i11 class="fas fa-swimmer fa-x"></i-->
          <i id=i11 class="fas fa-swimmer fa-x"></i> <i id=i11 class="fas fa-swimmer fa-x"></i>
          <i id=i11 class="fas fa-swimmer fa-x"></i> <i id=i11 class="fas fa-swimmer fa-x"></i>
          <i id=i11 class="fas fa-swimmer fa-x"></i> <i id=i11 class="fas fa-swimmer fa-x"></i>

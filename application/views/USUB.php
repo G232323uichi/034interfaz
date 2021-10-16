@@ -160,7 +160,8 @@ echo date('Y/m/d H:i:s');
 <!---------------------------------------------------------------------------->
  <?php
         /*****************  BOTON PARA  ESTUDIANTES  INSERTAR   ************************/
-    echo form_open_multipart('estudiante/agregarP');
+    echo form_open_multipart('estudiante/USUB_agregarP');
+    //echo form_open_multipart('estudiante/USU_agregar');
     ?>
          <div style="text-align: center;">
          <div style=" font-weight: bold;">INSCRIBIR</div>

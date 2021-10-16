@@ -13,7 +13,7 @@ class Usuarios extends CI_Controller
 	{//index.php/controlador/metodo/urisegment3
 	 //index.php/usuarios/index/2	
 		$dat['msg']=$this->uri->segment(3);  // se  recupera  un  numero  para mandar un  mensaje
-		if($this->session->userdata('login')) // si  E/  login de ssesion de formulario  inicialixda login en este caso
+		if($this->session->userdata('login')) // si  E/  login de ssesion de formulario  inicia lixda login en este caso
 		{
 			redirect('usuarios/panel','refresh');  // se  va  PANEL  para  validar login y pass
 		}											//  si  la  session  esta avierta
