@@ -86,10 +86,11 @@ public function index5()  //REGISTRO  DE  INSUMOS  DE  NATACION
 	
 
 		$this->load->view('inc_head.php');    //archivos de cabecera
-		$this->load->view('EST2',$data); //contenido
+		$this->load->view('INSU',$data); //contenido
 		$this->load->view('inc_footer.php');  //archivos del footer
 		
 	}
+
 
 /****************************   TABLA  5  ************************************/ 
 
@@ -104,6 +105,8 @@ public function index6()
 		$this->load->view('inc_footer.php');  //archivos del footer
 		
 	}
+
+
 
 /************************************************************************************/
 
@@ -210,7 +213,8 @@ public function USU_agregarbased()
 			$this->usuarios_model->agregarUsuarios($data);   
 		redirect('estudiante/index','refresh');
 	}
-/******************************* TABLA  ESTUDIANTES   INSERT   ***************************/
+
+/********************** TABLA  ESTUDIANTES   INSERT   ***************************/
       //('estudiante/USUB_agregarP')
   
 	public function USUB_agregarP()   // USUB
@@ -231,6 +235,31 @@ public function USU_agregarbased()
 		$this->usuarios_model->agregarPersona($data); 
 		//$this->estudiante_model->agregarPersona($data);   
 		redirect('estudiante/index1','refresh');
+		
+	}
+
+	/********************** TABLA  INSUMOS  INSERT   ***************************/
+    // ('estudiante/agregarINS');
+  
+	public function agregarINS()   // INSU
+	{
+		$this->load->view('inc_head.php');    //archivos de cabecera
+		$this->load->view('INSU_agregarP'); //contenido
+		$this->load->view('inc_footer.php');  //archivos del footer
+	}
+
+  //   ('estudiante/USUB_agregarbased')      
+	public function INSU_agregarbased ()
+	{
+		$data['descripcion']=$_POST['descripcion'];
+		$data['unidades']=$_POST['unidades'];  /*escrit0 BD  tiene q ser = escrito formulario*/
+		$data['saldo']=$_POST['saldo'];
+		$data['precioBase']=$_POST['precioBase'];
+		//$data['nivel']=$_POST['nivel'];
+	
+		$this->usuarios_model->agregarInsumos($data); 
+		//$this->estudiante_model->agregarPersona($data);   
+		redirect('estudiante/index5','refresh');
 		
 	}
 	

@@ -162,6 +162,23 @@ public function agregarUsuarios($data)    // inserta datos en la tabla  usuarios
 	return strtoupper($cadena);
 }
 
+
+
+/***************    I N S E R T A R      a  INSUMOS  *****************/		//
+
+public function agregarInsumos($data)
+	{
+	
+		$this->db->insert('insumos_natacion',$data);
+		if($this->db->affected_rows() >0){
+			return true;
+		}
+		else{
+			return false;
+		}
+
+	}
+
 /****************   M O D I F I C A R   ESTUDIANTES   **************************/
              
 public function recuperarEstudiantes($idestudiantes)   //*recuperar  idestudiantes por modificarMMMMMMMMMMM 

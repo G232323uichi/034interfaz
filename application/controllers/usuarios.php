@@ -222,6 +222,8 @@ public function USUmodificarbased()
 redirect('usuarios/index','refresh');
 	
 }
+
+
 /************************** M O D I F I C A R  PROFESORES    **********************/
  
 

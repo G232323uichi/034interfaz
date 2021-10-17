@@ -57,6 +57,8 @@ form{  position:fixed;
                   <div class="p-2 mb-2 bg-primary text-white" align="center">INSERTAR  REGISTROS  ADMINISTRACIÓN</div>
                 <!--h3 class="card-title">INSERTAR  REGISTROS</h3-->
               </div>
+              
+<!---------  FORMULARIO   DE   INSERTAR   DE   USU (ADMINISTRACION)------------>
      <?php                                     
           echo form_open_multipart('estudiante/USU_agregarbased'); // medoto agregar en  la  BD()
      ?>

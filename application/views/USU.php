@@ -38,7 +38,7 @@
 }
 
 .dropdown {
-    position: relative;     le  da mas  dinamismo
+    position: relative;    /* le  da mas  dinamismo*/
     display: inline-block;
 }
 
@@ -105,14 +105,14 @@ width: 150%;
 <!--/***************** USURIOS   ADMINISTRADOR   **********************************/-->
 <div class="dropdown">
   <!--button class="mainmenubtn"><i id=i1 class="fas fa-swimmer fa-sm"></i> </button-->
-    <button class="mainmenubtn" > M E N U </button>
+    <button class="mainmenubtn" > M E N U</button>
   <div class="dropdown-child">
     <nav class="top_menu">
       <ul>
         <!--li><a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index3">ESTUDIANTES</a></li--> 
         <!--li><a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index6">PRODUCTOS</a></li--> 
         <!--li><a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index">Tabla1</a></li--> 
-        <li><a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index5">INSUMOS</a></li>
+        <li><a href="http://localhost/MVC4/034interfaz/index.php/estudiante/index5">INSUMOS</a></li>
         <!--li><a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index4">HORARIOS</a></li-->
       </ul> 
      </nav>
@@ -173,11 +173,11 @@ echo date('Y/m/d H:i:s');
     <?php
             echo form_open_multipart('estudiante/USU_agregar');
      ?>
-         <!--i id=i11 class="fas fa-swimmer fa-x"></i> <i id=i11 class="fas fa-swimmer fa-x"></i>
          <i id=i11 class="fas fa-swimmer fa-x"></i> <i id=i11 class="fas fa-swimmer fa-x"></i>
          <i id=i11 class="fas fa-swimmer fa-x"></i> <i id=i11 class="fas fa-swimmer fa-x"></i>
          <i id=i11 class="fas fa-swimmer fa-x"></i> <i id=i11 class="fas fa-swimmer fa-x"></i>
-         <i id=i11 class="fas fa-swimmer fa-x"></i> <i id=i11 class="fas fa-swimmer fa-x"></i-->
+         <i id=i11 class="fas fa-swimmer fa-x"></i> <i id=i11 class="fas fa-swimmer fa-x"></i>
+         <i id=i11 class="fas fa-swimmer fa-x"></i> <i id=i11 class="fas fa-swimmer fa-x"></i>
          <i id=i11 class="fas fa-swimmer fa-x"></i> <i id=i11 class="fas fa-swimmer fa-x"></i>
          <i id=i11 class="fas fa-swimmer fa-x"></i> <i id=i11 class="fas fa-swimmer fa-x"></i>
          <i id=i11 class="fas fa-swimmer fa-x"></i> <i id=i11 class="fas fa-swimmer fa-x"></i>

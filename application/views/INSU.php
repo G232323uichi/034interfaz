@@ -27,6 +27,7 @@
  
   
 <div id="idem" class="p-3 mb-2 bg-primary text-white" align="center">ESCUELA </div>
+ <!---------------- S A L I R -------------------------->
 <?php
             
             //echo form_open_multipart('usuarios/logout');
@@ -38,10 +39,21 @@
  <?php 
             echo form_close();
  ?> 
+    <!------------------------------------>
 
+ <!----------------------------I N S U M O S ------------------------->
+
+  <!------hora-------------------------->
+<?php  
+date_default_timezone_set('America/La_Paz');
+echo date('Y/m/d H:i:s');
+ ?> 
+   <!------------------------------------>
+ <br>
   <a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index4">Tabla3</a>
   <a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index">Tabla1</a> 
-  <a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index3">Tabla2</a> 
+  <a href="http://localhost/MVC4/033interfaz/index.php/estudiante/index3">Tabla2</a>
+
 <div class="p-3 mb-2 bg-primary text-white" align="center">  DE  NATACIÓN</div>
 
 <!-- 
@@ -71,28 +83,26 @@
   
 <!--div style=" font-weight: bold;">REGISTRO  DE  ALUMNOS</div-->
 <!--h3 style="font-weight:bolder;">TABLA  4</h3-->
-<h3 style="font-weight:bolder;">REGISTRO  DE  INSUMOS  DE  NATACION </h3>
-
+<center><h3 style="font-weight:bolder;">REGISTRO  DE  INSUMOS  DE  NATACION </h3>
+</center>
 <br>
-<?php  
-date_default_timezone_set('America/La_Paz');
-echo date('Y/m/d H:i:s');
 
- ?>
 <br>
   <!--img width="100" img src="/*<?php echo base_url(); ?>a1.jpg"-->
-
+   <!-------------------I N S E R T A R ----------------------->
     <?php
-          //  echo form_open_multipart('estudiante/agregarP');
+          echo form_open_multipart('estudiante/agregarINS');
      ?>
          <div style="text-align: right;">
          <!--p class=align"center">INSERTAR</p-->
          <div style=" font-weight: bold;">I N S E R T A R </div>
-         <button type="submit" class="btn btn-success btn-xs">Insertar Estudiante</button>
+          <div style=" font-weight: bold;">I N S U M O    </div>
+         <button type="submit" class="btn btn-success btn-xs">Insertar Insumo</button>
         </div>    
      <?php 
-          //  echo form_close();
+            echo form_close();
      ?>
+       <!------------------------------------>
 <!--
     <a href="<? echo base_url(); ?>index.php/estudiante/agregar">
          <button type="submit" class="btn btn-success btn-xs">Agergar_Estudiante</button> 
