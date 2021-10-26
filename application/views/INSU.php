@@ -147,21 +147,28 @@ foreach ($EST2-> result() as $row)
       <!--td><?php//   echo $row->tipo;  ?></td-->
       <td><?php   echo $row->fechaRegistro;  ?></td>
       <!--td><?php//   echo $row->carril;  ?></td-->
-      <td>
--->
+    
+      
+<td>
 
-        <!--input type="hidden" name="fechaActual" value="</*?php date_default_timezone_set('America/La_Paz'); echo date('y/m/d g:ia'); ?>"-->
-  <?php
-    // echo form_open_multipart('estudiante/modificar');
-   ?>
-<!--         <input type="hidden" name="idestudiantes" value="<?php date_default_timezone_set('America/La_Paz'); echo date('y/m/d g:ia'); ?>">
-         <input type="hidden" name="idestudiantes" value="<?php echo $row->idestudiantes; ?>">
-         <button type="submit" class="btn btn-primary btn-xs">Modif.</button>
- -->        
-         <?php 
-    //   echo form_close();
-          ?>
-       </td>
+<?php   //   F O R M U L A R I O      ********  M O D I F I C A R ***********
+          
+             echo form_open_multipart('usuarios/INSUmodificar'); 
+ ?>
+
+    <input type="hidden" name="idInsumos" value="<?php echo $row->idInsumos; ?>">
+
+    <button  id=bu13 type="submit" class="btn btn-primary btn-xs"><i class="fas fa-edit"></i></button>
+
+ <?php 
+    echo form_close();
+ ?>
+
+ </td>
+
+
+
+
 <!--  ELIMINAR FISICO NO
           <td>
           <?php

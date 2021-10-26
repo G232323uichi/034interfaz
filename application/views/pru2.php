@@ -10,7 +10,10 @@
     <h2>Bootstrap</h2>
     <h3>Bootstrap</h3>
     <h4>Bootstrap</h4>
-     
+      <h1>
+        Generación de PDF con la librería FPDF 
+        <br> en Codeigniter
+      </h1>   
     <h5>Bootstrap</h5>
     <div>
 <!--/*****************  BOTON  DE  SALIR ******************************************/-->

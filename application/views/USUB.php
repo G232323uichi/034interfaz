@@ -95,7 +95,7 @@ width: 150%;
             echo form_close();
  ?>
 <!--/***************** ESTUDIANTES   **********************************************/-->
-<div class="p-3 mb-2 bg-primary text-white" align="center">ESCUELA </div>
+<div class="p-3 mb-2 bg-primary text-white" align="center">ESCUELA  |</div>
 
 <!--/***************** ***********************************************************/-->
 <div class="dropdown">
@@ -195,6 +195,7 @@ echo date('Y/m/d H:i:s');
       <th scope="col">Segundo Apellido</th>
       <th scope="col">CI</th>
        <th scope="col">Nivel</th>
+        <th scope="col">Fecha</th>
       <th scope="col">MODIFICAR</th>
       <th scope="col">ELIMINAR</th >
     </tr>
@@ -216,6 +217,7 @@ foreach ($EST-> result() as $row)
       <td><?php   echo $row->segundoApellido; ?></td>
       <td><?php   echo $row->ci;  ?></td>
       <td><?php   echo $row->nivel;  ?></td>
+        <td><?php   echo $row->fechaActualizacion;  ?></td>
         <td>
           <?php     //   F O R M U L A R I O      ********  M O D I F I C A R ***********
             echo form_open_multipart('estudiante/USUmodificar');

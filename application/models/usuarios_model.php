@@ -86,7 +86,7 @@ public function validarMensualidad($ci)
 	  return $this->db->get();
 	}
 */
-/****************   M O D I F I C A R   USUARIOS   ADMI recuperarUsuario**************************/
+/****************  M O D I F I C A R   USUARIOS   ADMI recuperarUsuario**************************/
 
 
 public function recuperarUsuario($idusuarios)   //*recuperar  idusuarios por modificarMMMMMMMMMMM 
@@ -102,6 +102,25 @@ public function modificarUsuarios($idusuarios,$data)
 	{
 		$this->db->where('idusuarios',$idusuarios);
 		$this->db->update('usuarios',$data);
+		
+	}
+
+	/****************  M O D I F I C A R    INSUMO **************************/
+
+
+public function recuperarInsumo($idInsumos)   //*recuperar  idusuarios por modificarMMMMMMMMMMM 
+	{
+	 $this->db->select('*');
+	 $this->db->from('insumos_natacion');
+	 $this->db->where('idInsumos',$idInsumos); //del  formulario ..a == lo introducido $id por teclad
+	 return $this->db->get();
+	}
+              //modificarInsumo($idInsumos,$data);    
+public function modificarInsumo($idInsumos,$data)   
+               											//recuperar  CI,nombre,apellidos pr modificarMMMMMMMMMM 
+	{
+		$this->db->where('idInsumos',$idInsumos);
+		$this->db->update('insumos_natacion',$data);
 		
 	}
 /****************   M O D I F I C A R   USUA  PROFESOR  recuperarUsuario**************************/

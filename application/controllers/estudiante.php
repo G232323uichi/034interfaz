@@ -1,17 +1,19 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-/*public function __construct(){
-	parent::__construct();
-	$this->load->model('usuarios_model');
-	$this->load->model('estudiante_model');
 
-}
-*/
 
 
 
 
 class Estudiante extends CI_Controller {
+   
+
+   public function __construct(){
+	parent::__construct();
+	$this->load->model('usuarios_model');
+	$this->load->model('estudiante_model');
+
+   }
 
 /********************  VISTA  DE  TRES   SESIONES ***********************/
 public function index()     //LOGIN   ADMINISTRADOR
@@ -19,11 +21,13 @@ public function index()     //LOGIN   ADMINISTRADOR
 		$lista=$this->usuarios_model->lista();
 		$data['EST']=$lista;
 		$this->load->view('inc_head.php');    //archivos de cabecera
-		$this->load->view('USU',$data); //contenido  Administrador
+			// $this->load->view('EST_agregarP');  // NONONO PRUEBA
+			// $this->load->view('USUBBB',$data); //MODO PRUEBA
+        $this->load->view('USU',$data); //contenido  Administrador
 		$this->load->view('inc_footer.php');  //archivos del footer
 		
 	}
-
+/*
  public function index2()  //LOGIN  PROFESOR
 	{
 		$lista=$this->estudiante_model->lista1();
@@ -31,9 +35,26 @@ public function index()     //LOGIN   ADMINISTRADOR
 		$data['profe']=$lista;
 
 		$this->load->view('inc_head.php');    //archivos de cabecer
+		$this->load->view('USUB',$data);
+		$this->load->view('inc_footer.php');  //archivos del footer
+	}
+*/
+ public function index2()  //LOGIN  PROFESOR
+	{
+		$lista=$this->estudiante_model->lista1();
+		//$lista=$this->usuarios_model->listaUsu();
+		$data['EST']=$lista;
+
+		$this->load->view('inc_head.php');    //archivos de cabecer
 		$this->load->view('USUA',$data);
 		$this->load->view('inc_footer.php');  //archivos del footer
 	}
+
+
+
+
+
+
 
   public function index1()   //LOGIN usuarios  ---ESTUDIANTES
 	{
@@ -105,6 +126,54 @@ public function index6()
 		$this->load->view('inc_footer.php');  //archivos del footer
 		
 	}
+
+
+/**********************I M P  R I M I R ********************************
+public function listapdf()
+{
+		
+	$data=[];
+	$hoy=date("dmyhis");
+	$html=$this->load->view('USU',$date,true);
+	$pdfFilePath="cipdf_".$hoy.".pdf";
+	$this->load->library('pdf');
+	$this->fpdf->fpdf->WriteHTML($html);
+	$this->fpdf->fpdf->output($pdfFilePath,"I");
+
+	//$html=$html->result();
+
+	/*$pdfFilePath="cipdf_".$hoy.".pdf";
+	$this->pdf=new pdf();
+	$this->pdf->AddPage();
+	$this->pdf->pdf->Ali8asNbPages();
+	$this->pdf->SetTitle("lista");
+	$this->pdf->SetLeftMargin
+*/
+	//$this->pdf->Output("lista.pdf",'I');
+
+	//$lista=$this->load->view('USU',$data)
+
+    //$lista=$this->load->view('EST_agregarP',$date,true);
+    // $lista=$this->load->view('EST_agregarP', $data);
+	//$lista=$this->usuarios_model->listaEST();  // esta  lista es un arreglo
+	//$lista=$lista->result()	;  // l o oconvierto en  un objecto
+	//$lista=$this->load->view('EST_agregarP',$date,true);
+/*
+	$this->pdf=new pdf();
+    $this->pdf->AddPage();
+    $this->pdf->AliasNbPages();
+    $this->pdf->SetTitle("LISTA");
+     $this->pdf->Cell(30);
+      $this->pdf->Cell(130,10,'LISTA ddd',0,0,'L',1);
+       $this->pdf->Ln(10);
+
+       $this->pdf->WriteHTML($lista);
+        $this->pdf->Output("lista.pdf",'I');
+
+	
+ }
+*/
+
 
 
 
@@ -232,6 +301,7 @@ public function USU_agregarbased()
 		$data['segundoApellido']=$_POST['segundo_apellido'];
 		$data['ci']=$_POST['ci'];
 		$data['nivel']=$_POST['nivel'];
+		$data['fechaActualizacion']=$_POST['fechaActualizacion'];
 		$this->usuarios_model->agregarPersona($data); 
 		//$this->estudiante_model->agregarPersona($data);   
 		redirect('estudiante/index1','refresh');

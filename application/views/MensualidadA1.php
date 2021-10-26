@@ -99,7 +99,7 @@ color: #fff;
  ?>
 
 
-<div class="p-3 mb-2 bg-primary text-white" align="center">ESCUELA</div>
+<div class="p-3 mb-2 bg-primary text-white" align="center">ESCUELA DE NATACIÓN</div>
   
  <tbody>
     <!--form method="post"-->
@@ -134,14 +134,27 @@ color: #fff;
       <!--p class="bad" > COMPLETE EL CAMPO</p-->
   <div class="bad"style="font-weight: bold," >EL  ALUMNO ESTA REGISTRADO</div>
       <p><?php echo "Mensualidad Pagada Bs.  " .$this->session->userdata('mensualidad') ?> </p>
-   <p><?php echo "Fecha " .$this->session->userdata('fecha_Actualizacion') ?> </p>
+   <p><?php echo "Fecha " .$this->session->userdata('fechaRegistro') ?> </p>
 
- <!--div style="text-align: right;"></div-->  
+       <!---------------- I  M P R I M I R ---------------------->
+  <a href="<?php echo base_url(); ?>index.php/estudiante/listapdf">IMPRIMIR</a>
+  <!--a href="http://localhost/MVC4/034interfaz/index.php/estudiante/listapdf">IMPRIMIR</a--> 
 
+ <?php
+    //  ***************** BUTTON  DE   SALIDA *************************
+              echo form_open_multipart('usuarios/Mensualidad');
+            //echo form_open_multipart('usuarios/logout');
+ ?>   
+  <!--div class="p-3 mb-2 bg-primary text-white" align="center">  DE  NATACIÓN</div-->     
+         
+        <div style="text-align: center;">
+        <button type="submit" class="btn btn-primary btn" align="center"> <i id=i12 class="fas fa-swimmer fa-sm"></i></button>
+      </div>
+ <?php 
+            echo form_close();
+ ?>
     </div>
-<?php
- // }
-?>
+
   </tbody>
 
   <?php  echo form_close(); ?>
@@ -226,22 +239,25 @@ color: #fff;
           echo form_close();
      ?>
  -->
-  
-<!--table class="table"-->
+
+
   <thead>
+ <!--   
   <?php
     //  ***************** BUTTON  DE   SALIDA *************************
-              echo form_open_multipart('usuarios/USUsalir');
+            //  echo form_open_multipart('usuarios/Mensualidad');
             //echo form_open_multipart('usuarios/logout');
- ?>   
-  <div class="p-3 mb-2 bg-primary text-white" align="center">  DE  NATACIÓN</div>     
-         
+ ?> 
+ -->  
+  <!--div class="p-3 mb-2 bg-primary text-white" align="center">  DE  NATACIÓN</div-->     
+   <!--      
         <div style="text-align: center;">
         <button type="submit" class="btn btn-primary btn" align="center"> <i id=i12 class="fas fa-swimmer fa-sm"></i></button>
       </div>
  <?php 
             echo form_close();
  ?>
+ -->
   </thead>
   <!--             F O N D O     PAG  -->
    <!--body id="fondo" style="background-image: url(<?php echo base_url();?>upload/c2.jpg);"-->

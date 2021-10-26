@@ -99,7 +99,7 @@ color: #fff;
  ?>
 
 
-<div class="p-3 mb-2 bg-primary text-white" align="center">ESCUELA</div>
+<div class="p-3 mb-2 bg-primary text-white" align="center">ESCUELA DE NATACIÓN</div>
   
  <tbody>
     <!--form method="post"-->
@@ -134,14 +134,24 @@ color: #fff;
       <!--p class="bad" > COMPLETE EL CAMPO</p-->
   <div class="bad"style="font-weight: bold," >EL  ALUMNO ESTA REGISTRADO</div>
       <p><?php echo "Mensualidad Pagada Bs.  " .$this->session->userdata('mensualidad') ?> </p>
-   <p><?php echo "Fecha " .$this->session->userdata('fecha_Actualizacion') ?> </p>
+   <p><?php echo "Fecha " .$this->session->userdata('fechaRegistro') ?> </p>
 
- <!--div style="text-align: right;"></div-->  
-
+<br>
+ <?php
+    //  ***************** BUTTON  DE   SALIDA *************************
+              echo form_open_multipart('usuarios/Mensualidad');
+            //echo form_open_multipart('usuarios/logout');
+ ?>   
+  <!--div class="p-3 mb-2 bg-primary text-white" align="center">  DE  NATACIÓN</div-->     
+         
+        <div style="text-align: center;">
+        <button type="submit" class="btn btn-primary btn" align="center"> <i id=i12 class="fas fa-swimmer fa-sm"></i></button>
+      </div>
+ <?php 
+            echo form_close();
+ ?>
     </div>
-<?php
- // }
-?>
+
   </tbody>
 
   <?php  echo form_close(); ?>
@@ -153,9 +163,18 @@ color: #fff;
 <!--**********************************************/-->
 
 
-
-
-
+       <!---------------- I  M P R I M I R ---------------------->
+  <!--form action="<?php echo base_url(); ?>index.php/estudiante/listapdf" method="POST"-
+ 
+      
+    <li><a href="http://localhost/MVC4/034interfaz/index.php/estudiante/listapdf"></a></li> 
+    <input type="text" name="txtPDF"><br>
+     <input type="submit" name="btnDownload"-->
+  <!--a target="_blank" href="<?//php echo base_url(); ?>index.php/estudiante/listapdf">MMMM</a-->
+  <!--button class="btn btn-success btn-block">IMPRIMIR</button-->
+  <!--/form-->
+  
+ 
 
  
 <!----------------------------------------------------------------------->
@@ -176,21 +195,6 @@ color: #fff;
     </a>
 </li>
 ->
-<! *************    prueba    *******************     -->
-
-<div class="tab-pane fade" id="tab2">
-  <div class="row">
-    <br>
-    <div class="col-lg-7"></div>
-    <div class="col-lg-3">
-      <input type="text" class="form-control" id="buscar" placeholder="BUSCAR">
-    </div>
-    <div class="col-lg-2">
-      <input type="button" class="btn-primary" id="btnbuscar" value="Mostrar">
-    </div>
-  </div>
-</div>
-
 
 <!--  /**************  T A B L A    MENSUALIDAD  *******************
 
@@ -226,30 +230,63 @@ color: #fff;
           echo form_close();
      ?>
  -->
-  
-<!--table class="table"-->
+
+
   <thead>
+ <!--   
   <?php
     //  ***************** BUTTON  DE   SALIDA *************************
-              echo form_open_multipart('usuarios/USUsalir');
+            //  echo form_open_multipart('usuarios/Mensualidad');
             //echo form_open_multipart('usuarios/logout');
- ?>   
-  <div class="p-3 mb-2 bg-primary text-white" align="center">  DE  NATACIÓN</div>     
-         
+ ?> 
+ -->  
+  <!--div class="p-3 mb-2 bg-primary text-white" align="center">  DE  NATACIÓN</div-->     
+   <!--      
         <div style="text-align: center;">
         <button type="submit" class="btn btn-primary btn" align="center"> <i id=i12 class="fas fa-swimmer fa-sm"></i></button>
       </div>
  <?php 
             echo form_close();
  ?>
+ -->
   </thead>
   <!--             F O N D O     PAG  -->
    <!--body id="fondo" style="background-image: url(<?php echo base_url();?>upload/c2.jpg);"-->
     <!--body style="background: #EDF5FE" img src="<?php echo base_url(); ?> a1.jpg"--> 
  
+       <!---------------- I  M P R I M I R ------------------->
+  <div>
+  <a target="_blank" href="<?php echo base_url(); ?>index.php/fpdf1000/index">
+    <input type="text" name="txtPDF">
+    <button class="btn btn-success btn-block">IMPRIMIR</button> 
+  </a>
+  </div>
+  <!--a href="http://localhost/MVC4/034interfaz/index.php/estudiante/listapdf">IMPRIMIR</a--> 
+    <!---------------- I  M P R I M I R ------------------->
+<!--
+<p>
+  <a href=""class="btn btn-danger"><span class="glyphicon-file" aria-hidden="true"></span>AAA</a>  
+</p>
+-->
+<form action="<?php echo base_url();?>034interfaz/index.php/fpdf1000/index" method="POST">
+   <!-- FORMULARIOS PARA INTRODUCIR DATOS---->
 
-
-
+<form action="<?php echo base_url();?>index.php/fpdf1000/" method="POST"> 
+ <input type="text" name="txtPDF"><br>
+ <input type="submit" name="btnDown">
+</form>
+   <!-- FORMULARIOS PARA INTRODUCIR DATOS---->
+    <br>
+    <!-- lo  lleva  a  un  link  mensualidad----
+      <a class="btn btn-success" href="<?php echo base_url();?>index.php/usuarios/mensualidad" target="_blank">
+        Generar hoja en blanco
+      </a>
+    -->
+    <!-- lo  lleva  a  un  link  lleva formulario----
+       <a class="btn btn-success" href="http://localhost/MVC4/034interfaz/index.php/estudiante/USU_agregar" target="_blank">
+        Generar hoja en blanco NNNN===
+      </a>
+     -->   
 
 </table>
 

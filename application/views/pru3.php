@@ -13,14 +13,14 @@
     <h5>Bootstrap</h5>
 <br>
 <?php 
-    foreach($mesu->result() as $cucucu){
+  //  foreach($mesu->result() as $cucucu){
 ?>
 <ul>
-    <!--li><?php echo $cucucu->idmensualidad; ?></li-->
-    <li><?php echo $cucucu->ci; ?></li>
+    <!--li><?php //echo $cucucu->idmensualidad; ?></li-->
+    <li><?php //echo $cucucu->ci; ?></li>
 </ul>
 <?php
-    }
+ //   }
 ?>
   </body>
 

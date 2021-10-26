@@ -2,6 +2,77 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+      
+<style type="text/css">
+#i1{color:#0628C0; }
+#i2{color:#0628C0; }
+#i3{color:#0628C0; }
+#i4{color:#0628C0; }
+#i5{color:#0628C0; }
+#i6{color:#0628C0; }
+#i7{color:#0628C0; }
+#i8{color:#0628C0; }
+#i9{color:#0628C0; }
+#i10{color:#0628C0; }
+#i11{color:#0628C0; }
+#i12{color:#FFFFFF; }
+
+*{
+padding: 0;
+margin: 0;
+font-family: century gothic;
+text-align: center;
+
+}
+form{
+padding: 50px 20px;
+background-color: #ededed;
+margin: calc(25% + 100px);
+margin-top: 10px;
+padding-top: 25pX;
+margin-bottom: 3px;
+
+}
+h1{
+  text-align: center;
+  padding: 12px;
+  color: #444;
+}
+
+input {
+width: calc(100% - 20px);
+padding: 9px;
+margin: auto;
+margin-top: 12px;
+font-size: 16px;
+}
+
+input[type='submit']{
+  background-color: #48e;
+  color: #fff;
+  width: calc(80% - 20px);
+  margin: 0 10%;
+  margin-top:22px ;
+  border-none ;
+}
+.ok{
+text-align: center;
+width: 100%;
+padding:12px ;
+background-color:#4e8 ;
+color: #fff;
+}
+.bad{
+text-align: center;
+font-size: 70%;
+width: 100%;
+padding:2px ;
+background-color:#a22 ;
+color: #fff;
+
+}
+
+</style>
        <div class="p-3 mb-2 bg-primary text-white"align="center">ESCUELA  DE  NATACIÓN</div>
         <div class="p-3 mb-2 bg-primary text-white"align="center">INSERTAR REGISTRO ESTUDIANTES</div>
 <?php
@@ -33,6 +104,11 @@
   <div class="mb-3">
     <label class="form-label">Nivel</label>
     <input type="text" class="form-control" name="nivel" placeholder="Escriba el nivel ">
+  </div>
+
+   <div class="mb-3">
+    <label class="form-label">Fecha</label>
+    <input type="date" class="form-control" name="fechaActualizacion" placeholder="Escriba la fecha ">
   </div>
 
   <button type="submit" class="btn btn-success">INSERTE</button>

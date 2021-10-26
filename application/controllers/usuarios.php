@@ -109,7 +109,7 @@ public function mensualidad(){
 		}
   
 }
-
+		  //usuarios/validarmensualidad
 	public function validarmensualidad()
 	{
 	  $ci=$_POST['ci'];              // llegan  login del formulario por POST de la BD
@@ -125,8 +125,9 @@ public function mensualidad(){
 	  		  $this->session->set_userdata('idmensualidad',$row->idmensualidad);
 	  		  $this->session->set_userdata('ci',$row->ci);
 	  		  $this->session->set_userdata('mensualidad',$row->mensualidad);
-	  		  $this->session->set_userdata('fecha_Actualizacion',$row->fecha_Actualizacion);
-	  		  redirect('usuarios/panel1','refresh');
+	  		  $this->session->set_userdata('fechaRegistro',$row->fechaRegistro);
+	  		  //redirect('usuarios/panel1','refresh');
+	  		  redirect('usuarios/mensualidad','refresh');
 	  	    }
 	   }
 	  else
@@ -156,7 +157,8 @@ public function mensualidad(){
      public function pru2()  
  {
  		$this->load->view('inc_head.php');    //archivos de cabece
- 	    $this->load->view('pru2',); //contenido   formulario
+ 	   // $this->load->view('pru2',); //contenido   formulario
+ 	    $this->load->view('Mensualidad');
 		$this->load->view('inc_footer.php');  //archivos del footer 
 
   }
@@ -233,7 +235,7 @@ public function USUAmodificar()
 		$data['infousuario']=$this->usuarios_model->recuperarUsuarioA($idProfesores);
 
 		$this->load->view('inc_head.php');    //archivos de cabecera
-		$this->load->view('USUA_modificar',$data); //contenido
+		$this->load->view('USUB_modificar',$data); //contenido
 		$this->load->view('inc_footer.php');  //archivos del footer
 	}
 
@@ -256,38 +258,39 @@ public function USUAmodificarbased()
 	}
 
 
-/************************** M O D I F I C A R  ESTUDIANTES   **********************/
- /******  MODIFICAR  USU  Admi  para      *******/
-/*
+/************************** M O D I F I C A R  INSUMOS   **********************/
+ /******  MODIFICAR       *******/
 
-public function ESTmodificar()  
+   //('usuarios/INSUmodificar');
+public function INSUmodificar()  
 	{
-		$idestudiantes=$_POST['idestudiante'];
-		$data['infousuario']=$this->usuarios_model->recuperarUsuario($idusuarios);
+		$idInsumos=$_POST['idInsumos'];
+		$data['infousuario']=$this->usuarios_model->recuperarInsumo($idInsumos);
 
 		$this->load->view('inc_head.php');    //archivos de cabecera
-		$this->load->view('USU_modificar',$data); //contenido
+		$this->load->view('INSU_modificar',$data); //contenido
 		$this->load->view('inc_footer.php');  //archivos del footer
 	}
 
       //MODIFICAR  BASE DATOS   DE   ADMI
-                    
- public function ESTmodificarbased() 
+       // usuarios/INSUmodificarbased')              
+ public function INSUmodificarbased() 
 	{
-		$idusuarios=$_POST['idusuarios'];
+		$idInsumos=$_POST['idInsumos'];
 		
 
-		$data['nombres']=$_POST['nombres'];     //escrito BD  tiene q ser = escrito  POR MI EN formulario
-	    $data['primerApellido']=$_POST['primer_apellido'];    //escrito BD  tiene q ser = escrito formulario
-		$data['segundoApellido']=$_POST['segundo_apellido'];
-		$data['nivel']=$_POST['nivel'];
-		$data['ci']=$_POST['ci'];
-		$data['tipo']=$_POST['tipo'];
-     //NO...  $this->estudiante_model->modificarUsuarios($idusuarios,$data);   
-		$this->usuarios_model->modificarUsuarios($idusuarios,$data);   
-		redirect('estudiante/index','refresh');
+		$data['descripcion']=$_POST['descripcion'];     //escrito BD  tiene q ser = escrito  POR MI EN formulario
+	    $data['unidades']=$_POST['unidades'];    //escrito BD  tiene q ser = escrito formulario
+		$data['saldo']=$_POST['saldo'];
+		$data['precioBase']=$_POST['precioBase'];
+		//$data['ci']=$_POST['ci'];
+		//$data['tipo']=$_POST['tipo'];
+     //NO...  $this->estudiante_model->modificarUsuarios($idusuarios,$data); 
+
+		$this->usuarios_model->modificarInsumo($idInsumos,$data);   
+		redirect('estudiante/index5','refresh');
 	}
-*/
+
  /*****************************************************************************/
 	public function eliminarbased()
 	{
