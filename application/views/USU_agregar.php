@@ -40,6 +40,15 @@ form{  position:fixed;
                   </div> 
             <!--div class="container">
             <div class="col-md-12"-->
+
+    <!-- /**********************   SALIR  *******************************************/-->
+     <?php
+        echo form_open_multipart('usuarios/USUsalir');   // Sale a la pag anterior
+     ?> 
+       <div style="text-align: center;">                 
+        <button style="text-align: right;"type="submit" class="btn btn-primary "><i id=i13 class="fas fa-swimmer fa-sm"></i></button>
+       </div> 
+ <!--   /***************************************************************************************/ -->
  
     </div>
   </div>
@@ -87,20 +96,20 @@ form{  position:fixed;
                    <input style="background: #E3E4FC" type="text" class="form-control" name="login" placeholder="Escriba el login ">
                 </div>
 
-                <div class="form-group">
+                <!--div class="form-group">
                    <label for="">Rol</label>
                   <select class="form-control" name="tipo" >
                    <option style="background: #E3E4FC" value="" disabled selected="">Seleccione... </option>
                    <option>usu</option>
                    <option >profe</option>
                    <option >admi</option>
-                 </select >
+                 </select -->
 
                  <!--input type="text" name="tipo" value="<?php echo $row->tipo; ?>"--  >
                     <!--input style="background: #E3E4FC" type="text-white" class="form-control"name="tipo" placeholder="tipo"-->
                  <!--input type="text" class="form-control" name="tipo"-->
                 
-                </div>
+                <!--/div-->
 
                
 
@@ -109,19 +118,15 @@ form{  position:fixed;
                    <?php
                    echo form_close();
                    ?>
-   <!-- /**********************   SALIR  *******************************************/-->
-                   <?php
-                    echo form_open_multipart('usuarios/USUsalir');   // Sale a la pag anterior
-                   ?> 
-       <div style="text-align: right;">                 
-        <button style="text-align: right;"type="submit" class="btn btn-primary ">S A R L I R</button>
-       </div> 
- <!--   /***************************************************************************************/ -->
-          <div>
+ 
+
+
+          <!--div>
                <ul data-widget="treeview">
                  <li><a href="#"> VOLVER AL  INICIO</a></li>
               </ul>
-          </div>
+          </div-->
+
               <!--/form-->
     </div>
 <!--/div>

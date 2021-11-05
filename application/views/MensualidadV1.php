@@ -122,19 +122,12 @@ color: #fff;
        <input type="submit" name="register">
       <!--/form-->
 <?php
- 
-
-
-
  ?>
     <br> 
     <br>
          <div>
              <p class="bad" > COMPLETE EL CAMPO</p>
         </div>
-<?php
- // }
-?>
   </tbody>
 
   <?php  echo form_close(); ?>

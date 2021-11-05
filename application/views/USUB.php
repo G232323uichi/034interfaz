@@ -95,12 +95,12 @@ width: 150%;
             echo form_close();
  ?>
 <!--/***************** ESTUDIANTES   **********************************************/-->
-<div class="p-3 mb-2 bg-primary text-white" align="center">ESCUELA  |</div>
+<div class="p-3 mb-2 bg-primary text-white">ESCUELA </div>
 
 <!--/***************** ***********************************************************/-->
 <div class="dropdown">
   <!--button class="mainmenubtn"><i id=i1 class="fas fa-swimmer fa-sm"></i> </button-->
-    <button class="mainmenubtn" > M E N U </button>
+    <button class="mainmenubtn" align="center" > M E N U </button>
   <div class="dropdown-child">
     <nav class="top_menu">
       <ul>
@@ -146,7 +146,7 @@ width: 150%;
 
   
 <!--div style=" font-weight: bold;">REGISTRO  DE  ALUMNOS</div-->
-<h3 style="font-weight:bolder;">REGISTRO  DE  ESTUDIANTES   </h3>
+<h3 style="font-weight:bolder;" align="center">REGISTRO  DE  ESTUDIANTES   </h3>
 
 
 
@@ -159,7 +159,7 @@ echo date('Y/m/d H:i:s');
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
  <?php
-        /*****************  BOTON PARA  ESTUDIANTES  INSERTAR   ************************/
+        /************  BOTON PARA  ESTUDIANTES  INSERTAR   ******************/
     echo form_open_multipart('estudiante/USUB_agregarP');
     //echo form_open_multipart('estudiante/USU_agregar');
     ?>
@@ -171,6 +171,7 @@ echo date('Y/m/d H:i:s');
  
      <?php 
             echo form_close();
+       /************  BOTON PARA  ESTUDIANTES  INSERTAR   ******************/
      ?>
 
 
@@ -194,12 +195,14 @@ echo date('Y/m/d H:i:s');
       <th scope="col">Primer Apellido</th>
       <th scope="col">Segundo Apellido</th>
       <th scope="col">CI</th>
+       <th scope="col">Mensualidad</th>
        <th scope="col">Nivel</th>
         <th scope="col">Fecha</th>
       <th scope="col">MODIFICAR</th>
       <th scope="col">ELIMINAR</th >
     </tr>
   </thead>
+
     <body id="fondo" style="background-image: url(<?php echo base_url();?>upload/p8.jfif);">
   <body style="background: #EDF5FE"> 
        <tbody style="background:#E3E4FC">   <!--COLOR  DE  LA  TABLA  -->
@@ -216,11 +219,12 @@ foreach ($EST-> result() as $row)
       <td><?php   echo $row->primerApellido; ?></td>
       <td><?php   echo $row->segundoApellido; ?></td>
       <td><?php   echo $row->ci;  ?></td>
+      <td><?php   echo $row->mes_pagado;  ?></td>
       <td><?php   echo $row->nivel;  ?></td>
-        <td><?php   echo $row->fechaActualizacion;  ?></td>
+      <td><?php   echo $row->fechaRegistro;  ?></td>
         <td>
           <?php     //   F O R M U L A R I O      ********  M O D I F I C A R ***********
-            echo form_open_multipart('estudiante/USUmodificar');
+            echo form_open_multipart('estudiante/USUBmodificar');
           ?>
        <input type="hidden" name="idestudiantes" value="<?php echo $row->idestudiantes; ?>">
        <button type="submit" class="btn btn-primary btn-xs"><i class="fas fa-edit"></i></button>

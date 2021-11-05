@@ -66,15 +66,33 @@ color: #fff;
 text-align: center;
 font-size: 70%;
 width: 100%;
-padding:2px ;
-background-color:#a22 ;
+padding:20px ;
+background-color:#4e8 ;
+/*background-color:#a22 ;*/
 color: #fff;
 
 }
-
 </style>
+
        <div class="p-3 mb-2 bg-primary text-white"align="center">ESCUELA  DE  NATACIÓN</div>
+
+  <?php
+ /************     SALIDA  ****************/
+      echo form_open_multipart('usuarios/USUsalir');       
+     //echo form_open_multipart('usuarios/logout');
+
+ ?>
+    <div style="text-align: center;">
+    <button type="submit" class="btn btn-primary " align="center"> <i id=i13 class="fas fa-swimmer fa-sm"></i></button>
+    </div> 
+
+ <?php 
+      echo form_close();
+       /************     SALIDA  ****************/
+ ?> 
         <div class="p-3 mb-2 bg-primary text-white"align="center">INSERTAR REGISTRO ESTUDIANTES</div>
+
+
 <?php
   //echo form_open_multipart('estudiante/USU_agregarbased');
   echo form_open_multipart('estudiante/USUB_agregarbased'); // medoto agregar en  la  BD()
@@ -85,8 +103,12 @@ color: #fff;
 
 <div class="mb-3">
     <label class="form-label">Nombre</label>
-    <input type="text" class="form-control" name="nombres" placeholder="Escriba el Nombre ">
+    <input type="text" class="form-control" name="nombres" placeholder="Escriba el Nombre  ">
   </div>
+<!--div>
+   <label for="nombre">  Nombre </label>
+    <input type="text" name="nombres" id="nombre_y_apellido" title="Ingrese su nombre y apellido" required />
+</div-->
 
   <div class="mb-3">
     <label class="form-label">Primer Apellido</label>
@@ -99,6 +121,11 @@ color: #fff;
     <div class="mb-3">
     <label class="form-label">CI</label>
     <input type="text" class="form-control" name="ci" placeholder="Escriba el CI ">
+  </div>
+
+<div class="mb-3">
+    <label class="form-label">Mensualidad</label>
+    <input type="text" class="form-control" name="mensualidad" placeholder="Escriba la mensualidad">
   </div>
 
   <div class="mb-3">
@@ -117,16 +144,7 @@ color: #fff;
   echo form_close();
   ?>
   
- <?php
-      echo form_open_multipart('usuarios/USUsalir');       
-     //echo form_open_multipart('usuarios/logout');
- ?>
-    <div style="text-align: right;">
-    <button type="submit" class="btn btn-primary " align="center">S A R L I R</button>
-    </div>    
- <?php 
-      echo form_close();
- ?> 
+
 
     </div>
   </div>

@@ -16,11 +16,12 @@ class Usuarios_model extends CI_Model {
 		$this->db->where('password',$password);//pass de bd sea el mismo que el $pass del formu  											introducido
 		return $this->db->get();
 	}
-
+/*************************** VALIDAR MENSUALIDAD **********************/
 	public function validarMensu($ci)
 	{
 		$this->db->select('*');
 		$this->db->from('mensualidad');
+		//$this->db->from('estudiantes');
 		$this->db->where('ci',$ci);//login de base datos  sea lo mismo  de el $login deL 											formulario intro
 		 return $this->db->get();
 	}
@@ -88,7 +89,7 @@ public function validarMensualidad($ci)
 */
 /****************  M O D I F I C A R   USUARIOS   ADMI recuperarUsuario**************************/
 
-
+                
 public function recuperarUsuario($idusuarios)   //*recuperar  idusuarios por modificarMMMMMMMMMMM 
 	{
 	 $this->db->select('*');
@@ -105,6 +106,24 @@ public function modificarUsuarios($idusuarios,$data)
 		
 	}
 
+/************  M O D I F I C A R   ESTUDIANTES **************/
+
+                
+public function recuperarUsuarioB($idestudiantes) //*recuperar idestudiantes por modificarMMMMMMMMMMM 
+	{
+	 $this->db->select('*');
+	 $this->db->from('estudiantes');
+	 $this->db->where('idestudiantes',$idestudiantes); //del  formulario ..a == lo introducido $id por teclad
+	 return $this->db->get();
+	}
+
+public function modificarUsuariosB($idestudiantes,$data)   
+               											//recuperar  CI,nombre,apellidos pr modificarMMMMMMMMMM 
+	{
+		$this->db->where('idestudiantes',$idestudiantes);
+		$this->db->update('estudiantes',$data);
+		
+	}
 	/****************  M O D I F I C A R    INSUMO **************************/
 
 

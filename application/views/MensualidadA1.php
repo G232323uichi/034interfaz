@@ -75,35 +75,16 @@ color: #fff;
 }
 
 </style>
-            <!--  /****background-color:#a22 **********  T A B L A    MENSUALIDAD  *******************
+ <!--  /****background-color:#a22 **** T A B L A    MENSUALIDAD  ******
 
 
--->
- <?php
-   /*   switch ($msg1)
-                {
-                  case '1':
-                  $mensaje1="ERROR DE  INGRESO ";
-                  break;
-                   case '2':
-                  $mensaje1="Acceso no valido";
-                  break;
-                   case '3':
-                  $mensaje1="Gracias por usar el sistema";
-                  break;
-                  default:
-                  $mensaje1="Ingrese sus datos";
-                  break;
-                }
-*/
- ?>
 
 
 <div class="p-3 mb-2 bg-primary text-white" align="center">ESCUELA DE NATACIÓN</div>
   
  <tbody>
-    <!--form method="post"-->
-    
+    <form method="post"-->
+   
 <?php
                  echo form_open_multipart('usuarios/validarmensualidad');
 
@@ -116,44 +97,36 @@ color: #fff;
   <div id=clas1 class="card-body" style="background-image: url(<?php echo base_url();?>upload/a1.jpg);">
       <p class="login-box-msg"><?php echo $mensaje1; ?></p>
    </div> 
-  ------------------------------------------------------------->    
-       <input type="text" name="ci" placeholder="V O L V E R">
+  ------------------------------------------------------------->   
+   <input type="text" name="ci" placeholder="V O L V E R">
        <!--input style="background: #EDF5FE" type="text" class="form-control" name="ci" value="<?php echo $row->ci; ?>"-->
 
-       <input type="submit" name="register">
-      <!--/form-->
-<?php
- // }
-
- // else
- // {
- ?>
-       <br> 
+       <input type="submit" name="register">  
+    <br> 
     <br>
   <div>
-      <!--p class="bad" > COMPLETE EL CAMPO</p-->
+  
   <div class="bad"style="font-weight: bold," >EL  ALUMNO ESTA REGISTRADO</div>
       <p><?php echo "Mensualidad Pagada Bs.  " .$this->session->userdata('mensualidad') ?> </p>
    <p><?php echo "Fecha " .$this->session->userdata('fechaRegistro') ?> </p>
 
-       <!---------------- I  M P R I M I R ---------------------->
-  <a href="<?php echo base_url(); ?>index.php/estudiante/listapdf">IMPRIMIR</a>
-  <!--a href="http://localhost/MVC4/034interfaz/index.php/estudiante/listapdf">IMPRIMIR</a--> 
 
- <?php
-    //  ***************** BUTTON  DE   SALIDA *************************
-              echo form_open_multipart('usuarios/Mensualidad');
-            //echo form_open_multipart('usuarios/logout');
- ?>   
-  <!--div class="p-3 mb-2 bg-primary text-white" align="center">  DE  NATACIÓN</div-->     
-         
-        <div style="text-align: center;">
-        <button type="submit" class="btn btn-primary btn" align="center"> <i id=i12 class="fas fa-swimmer fa-sm"></i></button>
-      </div>
- <?php 
-            echo form_close();
- ?>
-    </div>
+
+  <a class="btn btn-success" href="http://localhost/MVC4/034interfaz/index.php/estudiante/USU_agregarPDF" target="_blank">
+        Generar Un Recivo
+      </a>
+         </div>
+  <br>
+  <br>
+  <div>
+
+  <!--  //  ***************** BUTTON  DE   SALIDA *************************
+          // echo form_open_multipart('usuarios/Mensualidad');
+          //echo form_open_multipart('usuarios/logout');
+           echo form_open_multipart('estudiante/USUB');  -->
+
+ </div>
+ 
 
   </tbody>
 
@@ -166,49 +139,25 @@ color: #fff;
 <!--**********************************************/-->
 
 
-
-
-
+       <!---------------- I  M P R I M I R ---------------------->
+  <!--form action="<?php echo base_url(); ?>index.php/estudiante/listapdf" method="POST"-
+ 
+      
+    <li><a href="http://localhost/MVC4/034interfaz/index.php/estudiante/listapdf"></a></li> 
+    <input type="text" name="txtPDF"><br>
+     <input type="submit" name="btnDownload"-->
+  <!--a target="_blank" href="<?//php echo base_url(); ?>index.php/estudiante/listapdf">MMMM</a-->
+  <!--button class="btn btn-success btn-block">IMPRIMIR</button-->
+  <!--/form-->
+  
+ 
 
  
 <!----------------------------------------------------------------------->
 
-<!------------- I C O N S---------------------------
- <li><a href="#">
-    <i  id=i1 class="fas fa-swimmer fa-6x"></i> 
-    <i id=i2 class="fas fa-swimmer fa-5x"></i>
-    <i id=i3 class="fas fa-swimmer fa-4x"></i>
-    <i id=i4 class="fas fa-swimmer fa-3x"></i>
-    <i id=i5 class="fas fa-swimmer fa-2x"></i>
-    <i id=i6 class="fas fa-swimmer fa-1x"></i>
-    <i id=i7 class="fas fa-swimmer fa-x"></i>
-    <i id=i8 class="fas fa-swimmer fa-x"></i>
-    <i id=i9 class="fas fa-swimmer fa-x"></i>
-     <i id=i10 class="fas fa-swimmer fa-x"></i>
-     <i id=i11 class="fas fa-swimmer fa-x"></i>
-    </a>
-</li>
-->
-<! *************    prueba    *******************     -->
-
-<div class="tab-pane fade" id="tab2">
-  <div class="row">
-    <br>
-    <div class="col-lg-7"></div>
-    <div class="col-lg-3">
-      <input type="text" class="form-control" id="buscar" placeholder="BUSCAR">
-    </div>
-    <div class="col-lg-2">
-      <input type="button" class="btn-primary" id="btnbuscar" value="Mostrar">
-    </div>
-  </div>
-</div>
 
 
-<!--  /**************  T A B L A    MENSUALIDAD  *******************
-
-
--->
+<!  /**************  T A B L A    MENSUALIDAD  *******************-->
 <!--link href="css/bootstrap.min.css" rel="stylesheet"--> 
 
   
@@ -225,47 +174,13 @@ color: #fff;
 
 <br>
 -->
-  <!--img width="100" img src="<?php echo base_url(); ?> aaa1.jpg"
-
-    <?php
-          //  echo form_open_multipart('estudiante/agregarP');
-     ?>
-         <div style="text-align: right;">
-         <p class=align"center">INSERTAR</p>
-         <div style=" font-weight: bold;">I N S E R T A R </div>
-         <button type="submit" class="btn btn-success btn-xs">Insertar Estudiante</button>
-        </div>    
-     <?php 
-          echo form_close();
-     ?>
- -->
 
 
   <thead>
- <!--   
-  <?php
-    //  ***************** BUTTON  DE   SALIDA *************************
-            //  echo form_open_multipart('usuarios/Mensualidad');
-            //echo form_open_multipart('usuarios/logout');
- ?> 
- -->  
-  <!--div class="p-3 mb-2 bg-primary text-white" align="center">  DE  NATACIÓN</div-->     
-   <!--      
-        <div style="text-align: center;">
-        <button type="submit" class="btn btn-primary btn" align="center"> <i id=i12 class="fas fa-swimmer fa-sm"></i></button>
-      </div>
- <?php 
-            echo form_close();
- ?>
- -->
+
   </thead>
-  <!--             F O N D O     PAG  -->
-   <!--body id="fondo" style="background-image: url(<?php echo base_url();?>upload/c2.jpg);"-->
-    <!--body style="background: #EDF5FE" img src="<?php echo base_url(); ?> a1.jpg"--> 
  
-
-
-
+ 
 
 </table>
 

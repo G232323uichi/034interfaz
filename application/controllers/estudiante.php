@@ -2,9 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-
-
-
 class Estudiante extends CI_Controller {
    
 
@@ -61,7 +58,6 @@ public function index()     //LOGIN   ADMINISTRADOR
 		
 		$lista=$this->usuarios_model->listaEST();
 		$data['EST']=$lista;
-
 		$this->load->view('inc_head.php');    //archivos de cabecer
 		$this->load->view('USUB',$data);
 		$this->load->view('inc_footer.php');  //archivos del footer
@@ -128,56 +124,14 @@ public function index6()
 	}
 
 
-/**********************I M P  R I M I R ********************************
-public function listapdf()
-{
-		
-	$data=[];
-	$hoy=date("dmyhis");
-	$html=$this->load->view('USU',$date,true);
-	$pdfFilePath="cipdf_".$hoy.".pdf";
-	$this->load->library('pdf');
-	$this->fpdf->fpdf->WriteHTML($html);
-	$this->fpdf->fpdf->output($pdfFilePath,"I");
-
-	//$html=$html->result();
-
-	/*$pdfFilePath="cipdf_".$hoy.".pdf";
-	$this->pdf=new pdf();
-	$this->pdf->AddPage();
-	$this->pdf->pdf->Ali8asNbPages();
-	$this->pdf->SetTitle("lista");
-	$this->pdf->SetLeftMargin
-*/
-	//$this->pdf->Output("lista.pdf",'I');
-
-	//$lista=$this->load->view('USU',$data)
-
-    //$lista=$this->load->view('EST_agregarP',$date,true);
-    // $lista=$this->load->view('EST_agregarP', $data);
-	//$lista=$this->usuarios_model->listaEST();  // esta  lista es un arreglo
-	//$lista=$lista->result()	;  // l o oconvierto en  un objecto
-	//$lista=$this->load->view('EST_agregarP',$date,true);
-/*
-	$this->pdf=new pdf();
-    $this->pdf->AddPage();
-    $this->pdf->AliasNbPages();
-    $this->pdf->SetTitle("LISTA");
-     $this->pdf->Cell(30);
-      $this->pdf->Cell(130,10,'LISTA ddd',0,0,'L',1);
-       $this->pdf->Ln(10);
-
-       $this->pdf->WriteHTML($lista);
-        $this->pdf->Output("lista.pdf",'I');
-
-	
- }
-*/
-
-
-
-
 /************************************************************************************/
+     public function Mensualidad()  
+ {
+ 		$this->load->view('inc_head.php');    //archivos de cabece
+ 	    $this->load->view('Mensualidad',); //contenido   formulario
+		$this->load->view('inc_footer.php');  //archivos del footer 
+
+  }
 
 /************************** M O D I F I C A R    ESTUDIANTES    **********************/
  /******  MODIFICAR  EST  Admi  para      *******/
@@ -265,7 +219,7 @@ public function USU_agregarbased()
 		$data['primerApellido']=$_POST['primer_apellido'];  /*escribo  BD  tiene q ser = escrito formulario*/
 		$data['segundoApellido']=$_POST['segundo_apellido'];
 		$data['ci']=$_POST['ci'];
-		$data['tipo']=$_POST['tipo'];  // es  usu---profe--admi 
+		//$data['tipo']=$_POST['tipo'];  // es  ROL   usu---profe--admi 
 
 
 		//$data['nivel']=$_POST['nivel'];
@@ -282,6 +236,14 @@ public function USU_agregarbased()
 			$this->usuarios_model->agregarUsuarios($data);   
 		redirect('estudiante/index','refresh');
 	}
+/**********************************************************************/
+
+public function USU_agregarPDF()   // USUB
+	{
+		$this->load->view('inc_head.php');    //archivos de cabecera
+		$this->load->view('USU_agregarPDF'); //contenido
+		$this->load->view('inc_footer.php');  //archivos del footer
+	}	
 
 /********************** TABLA  ESTUDIANTES   INSERT   ***************************/
       //('estudiante/USUB_agregarP')
@@ -300,12 +262,13 @@ public function USU_agregarbased()
 		$data['primerApellido']=$_POST['primer_apellido'];  /*escrit0 BD  tiene q ser = escrito formulario*/
 		$data['segundoApellido']=$_POST['segundo_apellido'];
 		$data['ci']=$_POST['ci'];
+		$data['mes_pagado']=$_POST['mensualidad'];
 		$data['nivel']=$_POST['nivel'];
 		$data['fechaActualizacion']=$_POST['fechaActualizacion'];
 		$this->usuarios_model->agregarPersona($data); 
 		//$this->estudiante_model->agregarPersona($data);   
 		redirect('estudiante/index1','refresh');
-		
+	
 	}
 
 	/********************** TABLA  INSUMOS  INSERT   ***************************/
@@ -484,17 +447,17 @@ public function EST_eliminar()
 
 public function Est_eliminarbased ()
 	{
-	    $idusuarios=$_POST['idestudiantes'];
+	    $idestudiantes=$_POST['idestudiantes'];
 	    $data['estado']=$_POST['estado'];
-	    $this->estudiante_model->EliminarEstudiante11($idusuarios,$data);
-	    redirect('estudiante/index','refresh');
+	    $this->estudiante_model->EliminarEstudiante11($idestudiantes,$data);
+	    redirect('estudiante/index1','refresh');
    }
 
 
 /*************************************************************************************/
 
-
-public function USUmodificar()   //******  MODIFICAR  ESTUDIANTES  para      **************
+/*
+public function USUmodificar()   //**  MODIFICAR  ESTUDIANTES  para      ****
 	{
 		$idusuarios=$_POST['idestudiantes'];
 		$data['infousuario']=$this->usuarios_model->recuperarUsuario($idusuarios);
@@ -503,13 +466,57 @@ public function USUmodificar()   //******  MODIFICAR  ESTUDIANTES  para      ***
 		$this->load->view('USU_ESTmodificar',$data); //contenido
 		$this->load->view('inc_footer.php');  //archivos del footer
 	}
+*/
+/****************'usuarios/ MODIFICAR   ESTUDIANTE  ********************/
+public function USUBmodificar()   //**  MODIFICAR  ESTUDIANTES  para      ****
+	{
+		$idestudiantes=$_POST['idestudiantes'];
+		$data['infousuario']=$this->usuarios_model->recuperarUsuarioB($idestudiantes);
 
+		$this->load->view('inc_head.php');    //archivos de cabecera
+		$this->load->view('USUB_ESTmodificar',$data); //contenido
+		$this->load->view('inc_footer.php');  //archivos del footer
+	}
+public function USUBmodificarbased() 
+	{
+		$idestudiantes=$_POST['idestudiantes'];
+		
 
+		$data['nombres']=$_POST['nombres']; //escrito BD  tiene q ser = escrito  POR MI EN formulario
+	    $data['primerApellido']=$_POST['primer_apellido'];  /*escrito BD  tiene q ser = escrito formulario*/
+		$data['segundoApellido']=$_POST['segundo_apellido'];
+		//$data['nivel']=$_POST['nivel'];
+		$data['ci']=$_POST['ci'];
+		$data['mes_pagado']=$_POST['mes_pagado'];
+		//$data['tipo']=$_POST['tipo'];
+		//$data['login']=$_POST['login'];
+		$data['nivel']=$_POST['nivel'];
+	
+     //NO...  $this->estudiante_model->modificarUsuarios($idusuarios,$data);   
+		$this->usuarios_model->modificarUsuarios($idestudiantes,$data);   
+		redirect('usuarios/index','refresh');
+	}
 
+/****************'usuarios/elim**************************************/
+public function USUmodificarbased() 
+	{
+		$idusuarios=$_POST['idusuarios'];
+		
 
-
-/****************'usuarios/elim***************************************************************/
-
+		$data['nombres']=$_POST['nombres'];     //escrito BD  tiene q ser = escrito  POR MI EN formulario
+	    $data['primerApellido']=$_POST['primer_apellido'];  /*escrito BD  tiene q ser = escrito formulario*/
+		$data['segundoApellido']=$_POST['segundo_apellido'];
+		//$data['nivel']=$_POST['nivel'];
+		$data['ci']=$_POST['ci'];
+		$data['login']=$_POST['login'];
+		$data['tipo']=$_POST['tipo'];
+		$data['login']=$_POST['login'];
+		$data['nivel']=$_POST['nivel'];
+	
+     //NO...  $this->estudiante_model->modificarUsuarios($idusuarios,$data);   
+		$this->usuarios_model->modificarUsuarios($idusuarios,$data);   
+		redirect('usuarios/index','refresh');
+	}
 	public function modificar1()
 	{
 		$idEstudiantee=$_POST['idEstudiante'];

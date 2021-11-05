@@ -11,7 +11,7 @@ public function index()
 
       
 	$this->pdf=new pdf();
-     global $title;
+  global $title;
 
 
 

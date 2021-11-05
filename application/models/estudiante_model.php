@@ -168,6 +168,7 @@ public function ElimiEstudiante($idestudiantes)   /*recuperar  idusuarios pr mod
 		$this->db->where('idestudiantes',$idestudiantes);  // idusuarios de la BD  con id recubido de teclado
 		return $this->db->get();
 	} 
+	
 public function EliminarEstudiante11($idestudiantes,$data)   /*recuperar  idpersona pr modificar */
 	{
 		$this->db->where('idestudiantes',$idestudiantes);

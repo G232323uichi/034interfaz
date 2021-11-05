@@ -79,10 +79,11 @@ color: #fff;
 
 -->
  <?php
-      switch ($msg1)
+      switch ($msg1) 
                 {
                   case '1':
-                  $mensaje1="ERROR DE  INGRESO ";
+                  $mensaje1="ERROR DE  INGRESO DEL CI 
+                                 O NO EXISTE  EL CI";
                   break;
                    case '2':
                   $mensaje1="Acceso no valido";
@@ -99,19 +100,8 @@ color: #fff;
 
 
 <div class="p-3 mb-2 bg-primary text-white" align="center">ESCUELA</div>
-   <?php
-    //  ***************** BUTTON  DE   SALIDA *************************
-              echo form_open_multipart('usuarios/USUsalir');
-            //echo form_open_multipart('usuarios/logout');
- ?>   
-        <div style="text-align: center;">
-        <button type="submit" class="btn btn-primary btn"> <i id=i12 class="fas fa-swimmer fa-sm"></i></button>
-      </div>
- <?php 
-            echo form_close();
- ?>
-   
- <tbody>
+  
+ <body>
     <!--form method="post"-->
     
 <?php
@@ -132,14 +122,14 @@ color: #fff;
 
        <input type="submit" name="register">
       <!--/form-->
-
+<?php
+ ?>
     <br> 
     <br>
          <div>
              <p class="bad" > COMPLETE EL CAMPO</p>
         </div>
-
-  </tbody>
+  </body>
 
   <?php  echo form_close(); ?>
 <!--  ************* LISTA  TODA  LAS ci DE MENSUALIDAD *******************     -->
@@ -148,7 +138,6 @@ color: #fff;
 
 
 <!--**********************************************/-->
-  
 
 
 
@@ -174,7 +163,7 @@ color: #fff;
     </a>
 </li>
 ->
-<! *************    prueba    *******************     
+<! *************    prueba    *******************     -->
 
 <div class="tab-pane fade" id="tab2">
   <div class="row">
@@ -188,15 +177,66 @@ color: #fff;
     </div>
   </div>
 </div>
+
+
+<!--  /**************  T A B L A    MENSUALIDAD  *******************
+
+
 -->
-
-<!--  /**************  T A B L A    MENSUALIDAD  *******************-->
-
+<!--link href="css/bootstrap.min.css" rel="stylesheet"--> 
 
   
-  <!--          F O N D O     PAG 
-   <body id="fondo" style="background-image: url(<?php echo base_url();?>upload/c2.jpg);"-->
-    <body style="background: #EDF5FE" img src="<?php echo base_url(); ?> a1.jpg"> 
+<!--div style="font-weight: bold," >REGISTRO  DE  ALUMNOS
+ <div style="text-align: right;">
+</div-->
+
+  
+<!--h3 style="font-weight:bolder;">TABLA  5</h3-->
+
+<!--h3 style="font-weight:bolder;">FORMULARIO DEL  ESTUDIANTE</h3
+
+<br>
+
+<br>
+-->
+  <!--img width="100" img src="<?php echo base_url(); ?> aaa1.jpg"
+
+    <?php
+          //  echo form_open_multipart('estudiante/agregarP');
+     ?>
+         <div style="text-align: right;">
+         <p class=align"center">INSERTAR</p>
+         <div style=" font-weight: bold;">I N S E R T A R </div>
+         <button type="submit" class="btn btn-success btn-xs">Insertar Estudiante</button>
+        </div>    
+     <?php 
+          echo form_close();
+     ?>
+ -->
+  
+<!--table class="table"-->
+  <thead>
+  <?php
+    //  ***************** BUTTON  DE   SALIDA *************************
+              echo form_open_multipart('usuarios/USUsalir');
+            //echo form_open_multipart('usuarios/logout');
+ ?>   
+  <div class="p-3 mb-2 bg-primary text-white" align="center">  DE  NATACIÓN</div>     
+         
+        <div style="text-align: center;">
+        <button type="submit" class="btn btn-primary btn" align="center"> <i id=i12 class="fas fa-swimmer fa-sm"></i></button>
+      </div>
+ <?php 
+            echo form_close();
+ ?>
+  </thead>
+  <!--             F O N D O     PAG  -->
+   <!--body id="fondo" style="background-image: url(<?php echo base_url();?>upload/c2.jpg);"-->
+    <!--body style="background: #EDF5FE" img src="<?php echo base_url(); ?> a1.jpg"--> 
+ 
+
+
+
 
 </table>
 

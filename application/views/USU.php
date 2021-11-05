@@ -225,7 +225,7 @@ echo date('Y/m/d H:i:s');
       <th scope="col">Segundo Apellido</th>
       <th scope="col">CI</th>
       <!--th scope="col">Estado</th-->
-       <th scope="col">Usuario</th>
+       <!--th scope="col">Usuario</th-->
        <th scope="col">Fecha Registro</th>
        <th scope="col">Nivel</th>
        <th scope="col">MODIFICAR</th>
@@ -255,7 +255,7 @@ foreach ($EST-> result() as $row)
       <td><?php   echo $row->segundoApellido; ?></td>
       <td><?php   echo $row->ci;  ?></td>
       <!--td><?php   echo $row->login;  ?></td-->
-      <td><?php   echo $row->tipo;  ?></td>
+      <!--td><?php   echo $row->tipo;  ?></td-->
       <td><?php   echo $row->fechaRegistro;  ?></td>
       <td><?php   echo $row->nivel;  ?></td>
 

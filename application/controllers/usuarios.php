@@ -13,7 +13,7 @@ class Usuarios extends CI_Controller
 	{//index.php/controlador/metodo/urisegment3
 	 //index.php/usuarios/index/2	
 		$dat['msg']=$this->uri->segment(3);  // se  recupera  un  numero  para mandar un  mensaje
-		if($this->session->userdata('login')) // si  E/  login de ssesion de formulario  inicialixda login en este caso
+		if($this->session->userdata('login')) // si  E/  login de ssesion de formulario  inicia lixda login en este caso
 		{
 			redirect('usuarios/panel','refresh');  // se  va  PANEL  para  validar login y pass
 		}											//  si  la  session  esta avierta
@@ -109,28 +109,29 @@ public function mensualidad(){
 		}
   
 }
-		  //usuarios/validarmensualidad
+
+
+/**********************VALIDAR  MENSUALIDAD ****************/
 	public function validarmensualidad()
 	{
 	  $ci=$_POST['ci'];              // llegan  login del formulario por POST de la BD
       
 	  $consulta=$this->usuarios_model->validarMensu($ci);
 
-	  if($consulta->num_rows()>0)                        //si la  cantidad de  filas es > 0
+	  if($consulta->num_rows()>0)          //si la  cantidad de  filas es > 0
 	  {
 	    	foreach($consulta->result() as $row)
 	    	{
 //Se  existe  las varibl .... se crear las variables de  sesion
 //se crea la  variable de session ´ idusuarios´  y que el valor va tener idusuario sacado de BD escrito
-	  		  $this->session->set_userdata('idmensualidad',$row->idmensualidad);
-	  		  $this->session->set_userdata('ci',$row->ci);
-	  		  $this->session->set_userdata('mensualidad',$row->mensualidad);
-	  		  $this->session->set_userdata('fechaRegistro',$row->fechaRegistro);
-	  		  //redirect('usuarios/panel1','refresh');
-	  		  redirect('usuarios/mensualidad','refresh');
+	  		$this->session->set_userdata('idmensualidad',$row->idmensualidad);
+	  		$this->session->set_userdata('ci',$row->ci);
+	  		$this->session->set_userdata('mensualidad',$row->mensualidad);
+	  		$this->session->set_userdata('fechaRegistro',$row->fechaRegistr);
+	  		redirect('usuarios/panel1','refresh');
 	  	    }
-	   }
-	  else
+	  }
+	 else
 	   {//sino  existe --> redirigimos a index enviando 1 en el  urisegment 3
 	   	//  $mensaje="ERROR DE  INGRESO ";
 	  	redirect('usuarios/mensualidad/1','refresh');
@@ -141,7 +142,6 @@ public function mensualidad(){
  {
  	if($this->session->userdata('ci'))
  	{
- 		//redirect('usuarios/mensualidad1','refresh');
  		$this->load->view('inc_head.php');    //archivos de cabece
  	    //$this->load->view('Mensualidad');
  	    $this->load->view('MensualidadA',); //contenido   formulario
@@ -153,18 +153,20 @@ public function mensualidad(){
  	}
 
   }
+ /********************** P R U E B A ********************************/
 
      public function pru2()  
  {
  		$this->load->view('inc_head.php');    //archivos de cabece
- 	   // $this->load->view('pru2',); //contenido   formulario
- 	    $this->load->view('Mensualidad');
+ 	    $this->load->view('pru2',); //contenido   formulario
 		$this->load->view('inc_footer.php');  //archivos del footer 
 
   }
 
 
+
 /*******  LISTA  EN  PRU3  cualquier campo de tabla mensualidad ********/
+
  public function obtenerM(){
  	$data['mesu']=$this->usuarios_model->obtenerMensua();
  	$this->load->view('inc_head.php');    //archivos de cabece
@@ -224,8 +226,6 @@ public function USUmodificarbased()
 redirect('usuarios/index','refresh');
 	
 }
-
-
 /************************** M O D I F I C A R  PROFESORES    **********************/
  
 
@@ -235,7 +235,7 @@ public function USUAmodificar()
 		$data['infousuario']=$this->usuarios_model->recuperarUsuarioA($idProfesores);
 
 		$this->load->view('inc_head.php');    //archivos de cabecera
-		$this->load->view('USUB_modificar',$data); //contenido
+		$this->load->view('USUA_modificar',$data); //contenido
 		$this->load->view('inc_footer.php');  //archivos del footer
 	}
 
@@ -258,39 +258,38 @@ public function USUAmodificarbased()
 	}
 
 
-/************************** M O D I F I C A R  INSUMOS   **********************/
- /******  MODIFICAR       *******/
+/************************** M O D I F I C A R  ESTUDIANTES   **********************/
+ /******  MODIFICAR  USU  Admi  para      *******/
+/*
 
-   //('usuarios/INSUmodificar');
-public function INSUmodificar()  
+public function ESTmodificar()  
 	{
-		$idInsumos=$_POST['idInsumos'];
-		$data['infousuario']=$this->usuarios_model->recuperarInsumo($idInsumos);
+		$idestudiantes=$_POST['idestudiante'];
+		$data['infousuario']=$this->usuarios_model->recuperarUsuario($idusuarios);
 
 		$this->load->view('inc_head.php');    //archivos de cabecera
-		$this->load->view('INSU_modificar',$data); //contenido
+		$this->load->view('USU_modificar',$data); //contenido
 		$this->load->view('inc_footer.php');  //archivos del footer
 	}
 
       //MODIFICAR  BASE DATOS   DE   ADMI
-       // usuarios/INSUmodificarbased')              
- public function INSUmodificarbased() 
+                    
+ public function ESTmodificarbased() 
 	{
-		$idInsumos=$_POST['idInsumos'];
+		$idusuarios=$_POST['idusuarios'];
 		
 
-		$data['descripcion']=$_POST['descripcion'];     //escrito BD  tiene q ser = escrito  POR MI EN formulario
-	    $data['unidades']=$_POST['unidades'];    //escrito BD  tiene q ser = escrito formulario
-		$data['saldo']=$_POST['saldo'];
-		$data['precioBase']=$_POST['precioBase'];
-		//$data['ci']=$_POST['ci'];
-		//$data['tipo']=$_POST['tipo'];
-     //NO...  $this->estudiante_model->modificarUsuarios($idusuarios,$data); 
-
-		$this->usuarios_model->modificarInsumo($idInsumos,$data);   
-		redirect('estudiante/index5','refresh');
+		$data['nombres']=$_POST['nombres'];     //escrito BD  tiene q ser = escrito  POR MI EN formulario
+	    $data['primerApellido']=$_POST['primer_apellido'];    //escrito BD  tiene q ser = escrito formulario
+		$data['segundoApellido']=$_POST['segundo_apellido'];
+		$data['nivel']=$_POST['nivel'];
+		$data['ci']=$_POST['ci'];
+		$data['tipo']=$_POST['tipo'];
+     //NO...  $this->estudiante_model->modificarUsuarios($idusuarios,$data);   
+		$this->usuarios_model->modificarUsuarios($idusuarios,$data);   
+		redirect('estudiante/index','refresh');
 	}
-
+*/
  /*****************************************************************************/
 	public function eliminarbased()
 	{
